@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, X, Send, Minus, Headphones, ShoppingBag, Truck, RotateCcw, CircleHelp, Sparkles, CheckCheck, ChevronRight} from "lucide-react";
+import { MessageCircle, Send, Minus, Headphones, ShoppingBag, Truck, RotateCcw, CircleHelp, Sparkles, ChevronRight} from "lucide-react";
 
 
 type ChatMessage = {
