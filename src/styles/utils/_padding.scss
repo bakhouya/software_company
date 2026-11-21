@@ -1,0 +1,54 @@
+
+
+
+// -------------------------------------------------------------
+// Mixin: padding utilities (without prefix)
+// -------------------------------------------------------------
+@mixin padding_utils {
+  $min: 1;
+  $max: 50;
+
+  @for $i from $min through $max {
+    .p_#{$i}        { padding:              #{$i}px !important; }
+    .px_#{$i}       { padding-inline:       #{$i}px !important; }
+    .py_#{$i}       { padding-block:        #{$i}px !important; }
+    .ps_#{$i}       { padding-inline-start: #{$i}px !important; }
+    .pe_#{$i}       { padding-inline-end:   #{$i}px !important; }
+    .pt_#{$i}       { padding-block-start:  #{$i}px !important; }
+    .pb_#{$i}       { padding-block-end:    #{$i}px !important; }
+
+    .p_start_#{$i}  { padding-inline-start: #{$i}px !important; }
+    .p_end_#{$i}    { padding-inline-end:   #{$i}px !important; }
+  }
+
+  .p_0, .px_0, .py_0, .pt_0, .pb_0, .ps_0, .pe_0 { padding: 0 !important; }
+}
+// -------------------------------------------------------------
+
+
+// -------------------------------------------------------------
+// Loop in breakpoints > evry utility with prefix
+// sm:p_4, md:px_auto, lg:pt_8 ...
+// -------------------------------------------------------------
+@each $name, $value in $breakpoints {
+  @include media_up($value) {
+    @if $name == "" {@include padding_utils;} @else {
+
+      @each $i in (1,2,3,4,5,6,8,10,12,16,20,24,32,40,50) {
+        .#{$name}\:p_#{$i}  { padding:              #{$i}px !important; }
+        .#{$name}\:px_#{$i} { padding-inline:       #{$i}px !important; }
+        .#{$name}\:py_#{$i} { padding-block:        #{$i}px !important; }
+        .#{$name}\:pt_#{$i} { padding-block-start:  #{$i}px !important; }
+        .#{$name}\:pb_#{$i} { padding-block-end:    #{$i}px !important; }
+        .#{$name}\:ps_#{$i} { padding-inline-start: #{$i}px !important; }
+        .#{$name}\:pe_#{$i} { padding-inline-end:   #{$i}px !important; }
+      }
+      .#{$name}\:p_0, .#{$name}\:px_0, .#{$name}\:py_0,
+      .#{$name}\:pt_0, .#{$name}\:pb_0, .#{$name}\:ps_0, .#{$name}\:pe_0 {
+        padding: 0 !important;
+      }
+
+    }
+  }
+}
+// -------------------------------------------------------------

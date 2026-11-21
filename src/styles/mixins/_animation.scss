@@ -1,0 +1,32 @@
+
+
+
+//========================================================================================
+// MIXINS: ANIMATION
+// Motion_safe entrance helpers. All animations are gated
+// behind prefers_reduced_motion.
+//========================================================================================
+@mixin fade_in($duration: $anim_fade_duration) {
+  @include motion_safe {animation: fade_in $duration $ease_smooth both;}
+  @include reduced_motion { opacity: 1; }
+}
+
+@mixin slide_up($distance: $anim_slide_distance, $duration: $anim_slide_duration) {
+  @include motion_safe {animation: slide_up $duration $ease_smooth both;}
+  @include reduced_motion {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+@keyframes fade_in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide_up {
+  from { opacity: 0; transform: translateY($anim_slide_distance); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+//========================================================================================

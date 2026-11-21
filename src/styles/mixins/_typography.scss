@@ -1,0 +1,158 @@
+
+
+//========================================================================================
+// MIXINS: TYPOGRAPHY
+// Composable text styles. Every style sets family, size,
+// weight, line_height, letter_spacing and color.
+//========================================================================================
+
+// Base body text
+@mixin text_body {
+  font-size: $fs_base ;
+  font-weight: $fw_regular ;
+  line-height: $lh_relaxed;
+  color: $color_text;
+}
+
+// Headings
+@mixin text_h1 {
+  font-family: $font_heading;
+  font-size: $fs_5xl;
+  font-weight: $fw_extrabold;
+  line-height: $lh_tight;
+  letter-spacing: $ls_tight;
+  color: $color_ink;
+}
+@mixin text_h2 {
+  font-family: $font_heading;
+  font-size: $fs_4xl;
+  font-weight: $fw_bold;
+  line-height: $lh_tight;
+  letter-spacing: $ls_tight;
+  color: $color_ink;
+}
+@mixin text_h3 {
+  font-family: $font_heading;
+  font-size: $fs_3xl;
+  font-weight: $fw_bold;
+  line-height: $lh_snug;
+  letter-spacing: $ls_tight;
+  color: $color_ink;
+}
+@mixin text_h4 {
+  font-family: $font_heading;
+  font-size: $fs_2xl;
+  font-weight: $fw_semibold;
+  line-height: $lh_snug;
+  color: $color_ink;
+}
+@mixin text_h5 {
+  font-family: $font_heading;
+  font-size: $fs_xl;
+  font-weight: $fw_semibold;
+  line-height: $lh_snug;
+  color: $color_ink;
+}
+@mixin text_h6 {
+  font-family: $font_heading;
+  font-size: $fs_lg;
+  font-weight: $fw_semibold;
+  line-height: $lh_snug;
+  color: $color_ink;
+}
+
+// Display titles (hero)
+@mixin text_display_sm {
+  font-family: $font_heading;
+  font-size: $fs_display_sm;
+  font-weight: $fw_extrabold;
+  line-height: $lh_tight;
+  letter-spacing: $ls_tight;
+}
+@mixin text_display_md {
+  font-family: $font_heading;
+  font-size: $fs_display_md;
+  font-weight: $fw_extrabold;
+  line-height: $lh_tight;
+  letter-spacing: $ls_tight;
+}
+@mixin text_display_lg {
+  font-family: $font_heading;
+  font-size: $fs_display_lg;
+  font-weight: $fw_black;
+  line-height: $lh_tight;
+  letter-spacing: $ls_tight;
+}
+
+// Small utilities
+@mixin text_lead {
+  font-family: $font_body;
+  font-size: $fs_md;
+  font-weight: $fw_regular;
+  line-height: $lh_relaxed;
+  color: $color_muted;
+}
+@mixin text_small {
+  font-family: $font_body;
+  font-size: $fs_sm;
+  font-weight: $fw_regular;
+  line-height: $lh_normal;
+  color: $color_muted;
+}
+@mixin text_caption {
+  font-family: $font_body;
+  font-size: $fs_xs;
+  font-weight: $fw_medium;
+  line-height: $lh_normal;
+  color: $color_muted;
+}
+@mixin text_eyebrow {
+  font-family: $font_body;
+  font-size: $fs_xs;
+  font-weight: $fw_semibold;
+  line-height: $lh_normal;
+  letter-spacing: $ls_widest;
+  text-transform: uppercase;
+  color: $color_gold;
+}
+@mixin text_label {
+  font-family: $font_body;
+  font-size: $fs_sm;
+  font-weight: $fw_medium;
+  line-height: $lh_normal;
+  color: $color_text;
+}
+@mixin text_code {
+  font-family: $font_mono;
+  font-size: $fs_sm;
+  line-height: $lh_normal;
+}
+@mixin text_quote {
+  font-family: $font_heading;
+  font-size: $fs_xl;
+  font-weight: $fw_medium;
+  line-height: $lh_relaxed;
+  color: $color_ink_2;
+  font-style: italic;
+}
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Arabic_friendly text rendering
+@mixin text_arabic {
+  font-feature-settings: 'kern', 'liga', 'calt';
+  text-rendering: optimizeLegibility;
+  -webkit_font-smoothing: antialiased;
+  -moz-os-font-smoothing: grayscale;
+}
+//========================================================================================

@@ -1,0 +1,83 @@
+
+
+
+
+
+// -------------------------------------------------------------
+// Mixin: margin utilities (without prefix)
+// -------------------------------------------------------------
+@mixin margin_utils {
+  $min: 1;
+  $max: 50;
+
+  @for $i from $min through $max {
+    .m_#{$i}        { margin:              #{$i}px !important; }
+    .mx_#{$i}       { margin-inline:       #{$i}px !important; }
+    .my_#{$i}       { margin-block:        #{$i}px !important; }
+    .ms_#{$i}       { margin-inline-start: #{$i}px !important; }
+    .me_#{$i}       { margin-inline-end:   #{$i}px !important; }
+    .mt_#{$i}       { margin-block-start:  #{$i}px !important; }
+    .mb_#{$i}       { margin-block-end:    #{$i}px !important; }
+
+    .m_start_#{$i}  { margin-inline-start: #{$i}px !important; }
+    .m_end_#{$i}    { margin-inline-end:   #{$i}px !important; }
+
+    .mx_start_#{$i} { margin-inline-start: #{$i}px !important; }
+    .mx_end_#{$i}   { margin-inline-end:   #{$i}px !important; }
+    .my_start_#{$i} { margin-block-start:  #{$i}px !important; }
+    .my_end_#{$i}   { margin-block-end:    #{$i}px !important; }
+  }
+
+  // auto
+  .m_auto  { margin: auto !important; }
+  .mx_auto { margin-inline: auto !important; }
+  .my_auto { margin-block: auto !important; }
+  .mt_auto { margin-block-start: auto !important; }
+  .mb_auto { margin-block-end: auto !important; }
+  .ms_auto { margin-inline-start: auto !important; }
+  .me_auto { margin-inline-end: auto !important; }
+
+  // zero
+  .m_0, .mx_0, .my_0, .mt_0, .mb_0, .ms_0, .me_0 { margin: 0 !important; }
+}
+// -------------------------------------------------------------
+
+
+// -------------------------------------------------------------
+// Loop in breakpoints > evry utility with prefix
+// sm:m_4, md:mx_auto, lg:mt_8 ...
+// -------------------------------------------------------------
+@each $name, $value in $breakpoints {
+  @include media_up($value) {
+    @if $name == "" {@include margin_utils;} @else {
+      // prefix
+      @each $i in (1,2,3,4,5,6,8,10,12,16,20,24,32,40,50) {
+        .#{$name}\:m_#{$i}        { margin:              #{$i}px !important; }
+        .#{$name}\:mx_#{$i}       { margin-inline:       #{$i}px !important; }
+        .#{$name}\:my_#{$i}       { margin-block:        #{$i}px !important; }
+        .#{$name}\:mt_#{$i}       { margin-block-start:  #{$i}px !important; }
+        .#{$name}\:mb_#{$i}       { margin-block-end:    #{$i}px !important; }
+        .#{$name}\:ms_#{$i}       { margin-inline-start: #{$i}px !important; }
+        .#{$name}\:me_#{$i}       { margin-inline-end:   #{$i}px !important; }
+        .#{$name}\:mx_start_#{$i} { margin-inline-start: #{$i}px !important; }
+        .#{$name}\:mx_end_#{$i}   { margin-inline-end:   #{$i}px !important; }
+        .#{$name}\:my_start_#{$i} { margin-block-start:  #{$i}px !important; }
+        .#{$name}\:my_end_#{$i}   { margin-block-end:    #{$i}px !important; }
+      }
+
+      .#{$name}\:m_auto  { margin: auto !important; }
+      .#{$name}\:mx_auto { margin-inline: auto !important; }
+      .#{$name}\:my_auto { margin-block: auto !important; }
+      .#{$name}\:mt_auto { margin-block-start: auto !important; }
+      .#{$name}\:mb_auto { margin-block-end: auto !important; }
+      .#{$name}\:ms_auto { margin-inline-start: auto !important; }
+      .#{$name}\:me_auto { margin-inline-end: auto !important; }
+
+      .#{$name}\:m_0, .#{$name}\:mx_0, .#{$name}\:my_0,
+      .#{$name}\:mt_0, .#{$name}\:mb_0, .#{$name}\:ms_0, .#{$name}\:me_0 {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+// -------------------------------------------------------------

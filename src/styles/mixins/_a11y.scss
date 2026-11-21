@@ -1,0 +1,28 @@
+
+
+
+
+
+//========================================================================================
+// MIXINS: ACCESSIBILITY
+// Focus_visible_only helper and skip_link.
+//========================================================================================
+@mixin focus_visible_only {
+  &:focus { outline: none; }
+  &:focus-visible { @include focus_ring; }
+}
+
+@mixin skip_link($bg: $color_ink, $fg: $color_ivory) {
+  position            : absolute;
+  top                 : -100px;
+  inset-inline-start  : 8px;
+  padding             : $space_3 $space_4;
+  background          : $bg;
+  color               : $fg;
+  border_radius       : $radius_sm;
+  z-index             : $z_max;
+  transition          : top $dur_fast $ease_smooth;
+
+  &:focus { top: 8px; }
+}
+//========================================================================================

@@ -1,0 +1,69 @@
+
+
+//========================================================================================
+// UTILITIES: small global helpers
+//========================================================================================
+.sr_only { @include visually_hidden; }
+.section { @include section_spacing(md); }
+.section_alt { background: $color_ivory_2; }
+.section_dark { @include surface_dark; }
+.eyebrow { @include text_eyebrow; margin-bottom: 10px; }
+.divider_gold { @include divider_gold; }
+
+
+
+
+
+.page_container {
+  min-height: 100vh ;
+  @include flex(column, auto, auto, $space_5) ;
+   
+  .box {
+    border: 1px solid $color_border ;
+    width: 60% ;
+    margin-inline: auto ;
+  }
+}
+.container_public {
+    padding-inline: 100px ;
+    // max-width: 1200px ;
+    // margin-inline: auto ;
+}
+
+.hover {
+    transition: all $dur_base $ease_in_out ;
+    cursor: pointer;
+    &:hover {background-color: $color_hover ;}   
+}
+.link_item {
+    padding: 8px 15px ;
+    cursor: pointer;
+    @include flex(row, center, flex-start, 10px) ;
+    font-size: $fs_base ;
+}
+.hr {
+    height: 1px ;
+    background-color: $color_border ;
+    margin-block: 2px ;
+}
+
+
+
+.header_card {
+  height: 56px ;
+  @include flex(row, center, space-between, 10px) ;
+  padding-inline: 16px ;
+}
+
+
+
+
+
+@each $name, $value in $colors {.text_#{$name} {color: $value !important; }}
+
+@each $name, $value in $colors {.bg_#{$name} {background-color: $value !important;}}
+
+@each $name, $value in $colors {.border_#{$name} {border: 1px solid $value !important;}}
+
+@each $name, $value in $shadows {.shadow_#{$name} {box-shadow: $value !important;}}
+//========================================================================================

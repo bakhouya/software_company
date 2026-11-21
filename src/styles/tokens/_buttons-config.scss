@@ -1,0 +1,81 @@
+
+
+//========================================================================================
+// BUTTONS CONFIG
+//========================================================================================
+
+
+$btn_white : map-get($colors, "white");
+$btn_black : map-get($colors, "black");
+
+// SIZES
+$btn_sizes: (
+  "xs": (height: 26px, padding_x: 8px,  padding_y: 4px,  font_size: 11px, line_height: 1.2, icon_size: 12px, gap: 4px,  radius: $radius_sm),
+  "sm": (height: 32px, padding_x: 12px, padding_y: 6px,  font_size: 13px, line_height: 1.3, icon_size: 14px, gap: 6px,  radius: $radius_sm),
+  "md": (height: 40px, padding_x: 16px, padding_y: 8px,  font_size: 14px, line_height: 1.4, icon_size: 16px, gap: 8px,  radius: $radius_md),
+  "lg": (height: 48px, padding_x: 22px, padding_y: 10px, font_size: 16px, line_height: 1.5, icon_size: 18px, gap: 10px, radius: $radius_lg),
+  "xl": (height: 56px, padding_x: 28px, padding_y: 12px, font_size: 18px, line_height: 1.5, icon_size: 20px, gap: 12px, radius: $radius_lg),
+);
+
+// SHAPES
+$btn_shapes: (
+  "default": null,
+  "pill"   : $radius_full,
+  "square" : 0,
+  "rounded": $radius_lg,
+  "circle" : $radius_full,
+);
+
+// AUTO CONTRAST
+$btn_auto_contrast: (
+  "primary"          : $btn_white,
+  "secondary"        : map-get($colors, "ink"),
+  "gold"             : $btn_white,
+  "gold_soft"        : map-get($colors, "ink"),
+  "gold_deep"        : $btn_white,
+  "danger"           : $btn_white,
+  "danger_soft"      : map-get($colors, "danger"),
+  "success"          : $btn_white,
+  "success_soft"     : map-get($colors, "success"),
+  "warning"          : $btn_white,
+  "warning_soft"     : map-get($colors, "warning"),
+  "info"             : $btn_white,
+  "info_soft"        : map-get($colors, "info"),
+  "ink"              : $btn_white,
+  "ink_2"            : $btn_white,
+  "ink_3"            : $btn_white,
+  "ivory"            : map-get($colors, "ink"),
+  "ivory_2"          : map-get($colors, "ink"),
+  "ivory_3"          : map-get($colors, "ink"),
+  "white"            : map-get($colors, "ink"),
+  "black"            : $btn_white,
+  "background"       : map-get($colors, "text"),
+  "base"             : map-get($colors, "text"),
+  "text"             : $btn_white,
+  "text_strong"      : $btn_white,
+  "muted"            : $btn_white,
+  "subtle"           : $btn_white,
+  "border"           : map-get($colors, "text"),
+  "line"             : map-get($colors, "text"),
+  "line_strong"      : map-get($colors, "text"),
+  "focus"            : $btn_white,
+);
+
+
+$btn_pure_colors: (
+  "primary"     : $color_primary,
+  "secondary"   : $color_secondary,
+  "gold"        : $color_gold,
+  "gold_soft"   : $color_gold_soft,
+  "gold_deep"   : $color_gold_deep,
+  "danger"      : $color_danger,
+  "danger_soft" : $color_danger_soft,
+  "success"     : $color_success,
+  "success_soft": $color_success_soft,
+  "warning"     : $color_warning,
+  "warning_soft": $color_warning_soft,
+  "info"        : $color_info,
+  "info_soft"   : $color_info_soft,
+  "white"       : $color_white,
+  "black"       : $color_black,
+);

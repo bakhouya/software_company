@@ -1,0 +1,250 @@
+//========================================================================================
+// BUTTONS
+// Dependencies (must be defined before): $colors, $radius_*, $color_*,
+// $btn_sizes, $btn_shapes, $btn_auto_contrast, $btn_pure_colors, $btn_white
+//========================================================================================
+
+
+
+// Glow effect config
+$btn_glow_ring   : 2px !default;
+$btn_glow_lift   : 6px !default;
+$btn_glow_pulse_from : 50px !default;
+$btn_glow_pulse_to   : 150px !default;
+
+//----------------------------------------------------------------------------------------
+// MIXINS
+//----------------------------------------------------------------------------------------
+
+// Push a size config into CSS variables
+@mixin btn-size-vars($cfg) {
+  --btn-h:           #{map-get($cfg, height)};
+  --btn-px:          #{map-get($cfg, padding_x)};
+  --btn-py:          #{map-get($cfg, padding_y)};
+  --btn-font-size:   #{map-get($cfg, font_size)};
+  --btn-line-height: #{map-get($cfg, line_height)};
+  --btn-icon:        #{map-get($cfg, icon_size)};
+  --btn-gap:         #{map-get($cfg, gap)};
+  --btn-size-radius: #{map-get($cfg, radius)};
+}
+
+
+//----------------------------------------------------------------------------------------
+// BASE  (everything shared lives here)
+//----------------------------------------------------------------------------------------
+
+.btn {
+  // defaults: primary / solid / md
+  --btn-color:    #{$color_primary};
+  --btn-contrast: #{map-get($btn_auto_contrast, "primary")};
+  @include btn-size-vars(map-get($btn_sizes, "md"));
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--btn-gap);
+  height: var(--btn-h);
+  padding: var(--btn-py) var(--btn-px);
+  font-size: var(--btn-font-size);
+  line-height: var(--btn-line-height);
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  color: var(--btn-contrast);
+  background: var(--btn-color);
+  border: 1px solid var(--btn-color);
+  border-radius: var(--btn-shape-radius, var(--btn-size-radius));
+  outline: none;
+  transition: all .3s ease-in-out;
+
+  &:hover  { filter: brightness(.94); }
+  &:active { filter: brightness(.88); }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--btn-color) 35%, transparent);
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  // icons inside button
+  svg, i, .btn__icon {
+    flex-shrink: 0;
+    width: var(--btn-icon);
+    height: var(--btn-icon);
+    font-size: var(--btn-icon);
+  }
+}
+
+
+//----------------------------------------------------------------------------------------
+// COLORS  (.btn_primary, .btn_gold, ...)
+//----------------------------------------------------------------------------------------
+
+@each $name, $color in $btn_pure_colors {
+  .btn_#{$name} {
+    --btn-color:    #{$color};
+    --btn-contrast: #{map-get($btn_auto_contrast, $name)};
+    overflow: hidden ;
+    &:before {
+        content: "" ;
+        position: absolute ;
+        width: 5% ;
+        height: 40% ;
+        border-radius: 50% ;
+        background-color: darken($color , 5%) ;
+        inset-block-start: -20px ;
+        inset-inline-end: -20px ;
+    }
+  }
+}
+
+
+//----------------------------------------------------------------------------------------
+// STYLES  (solid is the default, so only outline is needed)
+//----------------------------------------------------------------------------------------
+
+.btn_outline {
+  color: var(--btn-color);
+  background: transparent;
+
+  &:hover, &:focus-visible {
+    color: var(--btn-contrast);
+    background: var(--btn-color);
+    filter: none;
+  }
+}
+
+@each $size, $cfg in $btn_sizes {
+  .btn_#{$size} {
+    @include btn-size-vars($cfg);
+  }
+}
+
+// RESPONSIVE SIZES  =>  .btn--from-{breakpoint}-{size}
+// ex: <button class="btn btn--sm btn--from-md-lg">  (sm on mobile, lg from md and up)
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @each $size, $cfg in $btn_sizes {
+      .btn_from-#{$bp}-#{$size} {
+        @include btn-size-vars($cfg);
+      }
+    }
+  }
+}
+
+
+//----------------------------------------------------------------------------------------
+// SHAPES  (.btn--pill, .btn--square, .btn--rounded, .btn--circle)
+//----------------------------------------------------------------------------------------
+
+@each $name, $radius in $btn_shapes {
+  @if $radius != null {
+    .btn_#{$name} {
+      --btn-shape-radius: #{$radius};
+    }
+  }
+}
+
+
+
+
+//----------------------------------------------------------------------------------------
+// GLOW EFFECT  (only when the button has .btn--glow)
+//----------------------------------------------------------------------------------------
+
+.btn_glow {
+    --btn-shape-radius: #{$radius_full};
+    --btn-glow: color-mix(in srgb, var(--btn-color) 55%, #fff);
+
+    // min-width: 190px;
+    // font-weight: 600 ;
+    // background: linear-gradient(90deg, color-mix(in srgb, var(--btn-color) 75%, #fff) 0%, var(--btn-color) 100%);
+    // box-shadow: 10px 10px 24px color-mix(in srgb, var(--btn-color) 64%, transparent);
+
+    // outer ring shown on hover/focus
+    // &::before {
+    //     content: "";
+    //     position: absolute ;
+    //     inset: -#{$btn_glow_ring * 2.1};
+    //     border-radius: inherit;
+    //     border: $btn_glow_ring solid var(--btn-glow);
+    //     box-shadow: 0 0 60px color-mix(in srgb, var(--btn-glow) 64%, transparent);
+    //     opacity: 0 ;
+    //     transition: opacity .3s ease-in-out;
+    //     pointer-events: none;
+    //      z-index: 2 ;
+    // }
+
+    // pulsing ring behind the button (idle state)
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 1 ;
+        box-sizing: border-box;
+        width: $btn_glow_pulse_from;
+        height: $btn_glow_pulse_from;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: $btn_glow_ring solid var(--btn-glow);
+        animation: btn-ring 1.5s infinite;
+        pointer-events: none ;
+        display: none ;
+    }
+    &:hover, &:focus-visible {
+        filter: none;
+        // transform: translateY(-#{$btn_glow_lift});
+
+        &::before { opacity: 1; }
+        &::after  { animation: none; display: none; }
+    }
+    &:active::after {
+        display: block;
+        animation: btn-ring 1.5s infinite;
+    }
+
+}
+
+
+@keyframes btn-ring {
+  0% {
+    width: $btn_glow_pulse_from;
+    height: $btn_glow_pulse_from;
+    opacity: 1;
+  }
+  100% {
+    width: $btn_glow_pulse_to;
+    height: $btn_glow_pulse_to;
+    opacity: 0;
+  }
+}
+
+// square button: width = height (works with every size, even responsive)
+.btn_circle, .btn_icon {
+  width: var(--btn-h);
+  padding: 0 ;
+  border: 0 ;
+  &.btn_glow {
+    min-width: var(--btn-h) !important ;
+  }
+}
+
+.btn_block {
+  display: flex;
+  width: 100%;
+}
+
+
+.btn_radius {
+  border-radius: 40px !important ;
+  corner-shape: $squircle !important ;
+}

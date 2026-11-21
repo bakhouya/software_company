@@ -1,0 +1,29 @@
+
+
+//========================================================================================
+// TOKENS: ICON SIZES
+// Responsive icon sizes, used by Lucide icons.
+//========================================================================================
+$icon_xs    :  clamp(12px, 0.80vw + 10px, 14px);
+$icon_sm    :  clamp(14px, 1.00vw + 12px, 16px);
+$icon_md    :  clamp(18px, 1.20vw + 15px, 20px);
+$icon_lg    :  clamp(20px, 1.60vw + 17px, 24px);
+$icon_xl    :  clamp(24px, 2.00vw + 20px, 32px);
+$icon_2xl   :  clamp(32px, 2.80vw + 26px, 44px);
+
+$icons_size: (
+    "xs"   : $icon_xs ,
+    "sm"   : $icon_sm ,
+    "md"   : $icon_md ,
+    "lg"   : $icon_lg ,
+    "xl"   : $icon_xl ,
+    "2xl"  : $icon_2xl,
+);
+
+@each $name, $size in $icons_size {
+    .icon_#{$name} {
+        width :   #{$size} !important ;
+        height:   #{$size} !important ;
+    }
+}
+//========================================================================================

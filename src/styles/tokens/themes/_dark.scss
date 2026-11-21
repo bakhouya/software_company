@@ -1,0 +1,57 @@
+
+
+
+
+// =========================================================================================
+// DARK THEME MIXIN
+// =========================================================================================
+@mixin dark_theme {
+  --bg_color        : #10191B;
+  --base_color      : #172426;
+  --color_hover     : rgba(17, 175, 167, 0.10);
+  --color_border    : #243033;
+  
+// --bg_color      : #202124;
+// --base_color    : #292A2D;
+// --color_hover   : rgba(168, 199, 250, 0.12);
+// --color_border  : #313335;
+
+
+
+  --color_ink       : #D9EAE8;
+  --color_ink_2     : #B9D5D2;
+  --color_ink_3     : #8DBBB6;
+
+  --color_ivory     : rgba(17, 175, 167, 0.04);
+  --color_ivory_2   : rgba(17, 175, 167, 0.07);
+  --color_ivory_3   : rgba(17, 175, 167, 0.11);
+
+  --color_text          : #E0E8E8;
+  --color_text_strong   : #FFFFFF;
+  --color_muted         : #A6B4B7;
+  --color_subtle        : #839397;
+
+  --color_line          : rgba(220, 238, 236, 0.12);
+  --color_line_strong   : rgba(220, 238, 236, 0.24);
+  --color_line_light    : rgba(220, 238, 236, 0.08);
+  --color_line_light_strong: rgba(220, 238, 236, 0.16);
+
+  --color_focus         : var(--color_gold);
+
+  --shadow_sm           : 0 1px 2px rgba(0, 0, 0, 0.20);
+  --shadow_md           : 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow_lg           : 0 10px 30px rgba(0, 0, 0, 0.35);
+
+  
+
+
+--bg_gradient:
+  radial-gradient(ellipse at 15% 10%, rgba(17, 175, 167, 0.09) 0%, transparent 48%),
+  radial-gradient(ellipse at 85% 85%, rgba(17, 175, 167, 0.05) 0%, transparent 45%),
+  linear-gradient(135deg, #080a0a 0%, #0b0d0d 25%, #0e1111 50%, #090b0b 75%, #060707 100%);
+
+
+
+  color-scheme: dark;
+}
+// =========================================================================================

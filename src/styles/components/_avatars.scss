@@ -1,0 +1,207 @@
+
+
+//========================================================================================
+// AVATARS
+// Dependencies (must be defined before): $colors, $radius_*, $color_*,
+// $btn_pure_colors, $btn_auto_contrast, $btn_white (from the buttons config)
+//========================================================================================
+
+
+//----------------------------------------------------------------------------------------
+// CONFIG
+//----------------------------------------------------------------------------------------
+
+// SIZES
+$avatar_sizes: (
+  "xs" : (size: 24px, font_size: 10px, ring: 1px, status: 6px),
+  "sm" : (size: 32px, font_size: 12px, ring: 2px, status: 8px),
+  "md" : (size: 40px, font_size: 16px, ring: 2px, status: 10px),
+  "lg" : (size: 48px, font_size: 18px, ring: 2px, status: 12px),
+  "xl" : (size: 64px, font_size: 20px, ring: 3px, status: 14px),
+  "2xl": (size: 96px, font_size: 30px, ring: 4px, status: 18px),
+) !default;
+
+// SHAPES
+$avatar_shapes: (
+  "circle" : $radius_full,
+  "rounded": $radius_lg,
+  "square" : $radius_sm,
+) !default;
+
+// STATUS DOT
+$avatar_status: (
+  "online" : $color_success,
+  "busy"   : $color_danger,
+  "away"   : $color_warning,
+  "offline": map-get($colors, "muted"),
+) !default;
+
+
+
+// Defaults (used as fallbacks so a group can pass its vars down to its avatars)
+$_avatar_md: map-get($avatar_sizes, "md");
+
+
+//----------------------------------------------------------------------------------------
+// MIXINS
+//----------------------------------------------------------------------------------------
+
+@mixin avatar-size-vars($cfg) {
+  --avatar-size:      #{map-get($cfg, size)};
+  --avatar-font-size: #{map-get($cfg, font_size)};
+  --avatar-ring:      #{map-get($cfg, ring)};
+  --avatar-status:    #{map-get($cfg, status)};
+}
+
+
+//----------------------------------------------------------------------------------------
+// BASE
+//----------------------------------------------------------------------------------------
+
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width:  var(--avatar-size, #{map-get($_avatar_md, size)});
+  height: var(--avatar-size, #{map-get($_avatar_md, size)});
+  font-size: var(--avatar-font-size, #{map-get($_avatar_md, font_size)});
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  user-select: none;
+  color:      var(--avatar-contrast, #{map-get($btn_auto_contrast, "secondary")});
+  background: var(--avatar-color, #{$color_secondary});
+  border-radius: var(--avatar-shape-radius, #{$radius_full});
+  cursor: pointer;
+  // image avatar
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  // status dot (.avatar_online, .avatar_busy ...)
+  &::after {
+    content: none;
+    position: absolute;
+    inset-inline-end: 1px ;
+    bottom: 1px ;
+    width:  var(--avatar-status, #{map-get($_avatar_md, status)});
+    height: var(--avatar-status, #{map-get($_avatar_md, status)});
+    border-radius: 50%;
+    background: var(--avatar-status-color) ;
+    border: 3px solid $base_color ;
+  }
+}
+
+
+//----------------------------------------------------------------------------------------
+// COLORS  (.avatar_primary, .avatar_gold ...)
+//----------------------------------------------------------------------------------------
+
+@each $name, $color in $btn_pure_colors {
+  .avatar_#{$name}, .avatar_group_#{$name} {
+    --avatar-color:    #{$color};
+    --avatar-contrast: #{map-get($btn_auto_contrast, $name)};
+  }
+}
+//----------------------------------------------------------------------------------------
+
+
+
+
+//----------------------------------------------------------------------------------------
+// SIZES  (works on .avatar and on .avatar_group)
+//----------------------------------------------------------------------------------------
+
+@each $size, $cfg in $avatar_sizes {
+  .avatar_#{$size}, .avatar_group_#{$size} {
+    @include avatar-size-vars($cfg);
+  }
+}
+
+// RESPONSIVE SIZES  =>  .{breakpoint}:avatar_{size}
+// ex: <span class="avatar avatar_sm md:avatar_md lg:avatar_xl">
+@each $bp, $width in $breakpoints {
+  @media (min-width: $width) {
+    @each $size, $cfg in $avatar_sizes {
+      .#{$bp}\:avatar_#{$size}, .#{$bp}\:avatar_group_#{$size} {
+        @include avatar-size-vars($cfg);
+      }
+    }
+  }
+}
+//----------------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------------
+// SHAPES  (works on .avatar and on .avatar_group)
+//----------------------------------------------------------------------------------------
+
+@each $name, $radius in $avatar_shapes {
+  .avatar_#{$name}, .avatar_group_#{$name} {
+    --avatar-shape-radius: #{$radius};
+  }
+}
+//----------------------------------------------------------------------------------------
+
+
+
+
+//----------------------------------------------------------------------------------------
+// STATUS
+//----------------------------------------------------------------------------------------
+
+@each $name, $color in $avatar_status {
+  .avatar_#{$name} {
+    --avatar-status-color: #{$color};
+    &::after { content: ""; }
+  }
+}
+//----------------------------------------------------------------------------------------
+
+
+
+
+
+//----------------------------------------------------------------------------------------
+// AVATAR GROUP  (overlapping avatars)
+//----------------------------------------------------------------------------------------
+
+.avatar_group {
+  --avatar-overlap: .3;   // 0.3 = each avatar covers 30% of the previous one
+
+  display: inline-flex;
+  align-items: center;
+
+  .avatar {
+    // ring = same color as the background, so avatars look "cut" from each other
+    // box-shadow: 0 0 0 var(--avatar-ring, 2px) var(--avatar-ring-color, #{$btn_white});
+    border: 1px solid $bg_color ;
+    background-color: $color_primary ;
+    transition: transform .2s ease-in-out;
+
+    & + .avatar {
+      margin-inline-start: calc(var(--avatar-size, #{map-get($_avatar_md, size)}) * var(--avatar-overlap) * -1);
+    }
+
+    &:hover {
+      // z-index: 2;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+// spacing between avatars
+.avatar_group_tight { --avatar-overlap: .45; }
+.avatar_group_loose { --avatar-overlap: .15; }
+.avatar_count {
+  --avatar-color:    #{map-get($colors, "ink")};
+  --avatar-contrast: #{$btn_white};
+  letter-spacing: .5px;
+  background-color: $color_primary ;
+}
+//----------------------------------------------------------------------------------------

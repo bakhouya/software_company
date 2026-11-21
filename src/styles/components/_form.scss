@@ -1,0 +1,67 @@
+
+
+
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+.contact_fields_row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+.form_field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    label {
+        font-size: $fs_base ;
+        font-weight: $fw_semibold ;
+        span {color: $color_danger ; }
+    }
+
+    input, select, textarea {
+        width: 100%;
+        min-width: 0;
+        padding: 14px 15px;
+        color: inherit;
+        font: inherit;
+        font-size: 13px;
+        background: $color_hover ;
+        border: 1px solid $color_border;
+        @include radius_large() ;
+        outline: none;
+        transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+        &::placeholder {
+            color: inherit;
+            opacity: 0.35;
+        }
+
+        &:focus {
+            border-color: rgba($color_primary, 0.7);
+            background: rgba($color_primary, 0.035);
+            box-shadow: 0 0 0 3px rgba($color_primary, 0.08);
+        }
+    }
+    select {
+        cursor: pointer;
+
+        option {
+            color: #171717;
+            background: #fff;
+        }
+    }
+    textarea {
+        min-height: 125px;
+        resize: none ;
+        line-height: 1.7;
+    }
+}
+

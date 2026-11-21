@@ -1,0 +1,72 @@
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+
+  &__menu {
+      position          : absolute;
+      top               : calc(100% + 6px);
+      inset-inline-end  : 0 ;
+      min-width         : 320px;
+      background        : $base_color ;
+      border            : 1px solid $color_border ;
+      border-radius     : $radius_md ;
+      box-shadow        : $shadow_md;
+      overflow          : hidden;
+      z-index           : 100 ;
+
+      opacity           : 0;
+      visibility        : hidden;
+      transform         : translateY(-6px);
+      transition        : all $dur_base $ease_in_out;
+  
+
+
+      &.is_open {
+        opacity         : 1;
+        visibility      : visible;
+        transform       : translateY(0);
+      }
+      &.end {  
+        inset-inline-end    : auto;
+        inset-inline-start  : 0 !important ;
+      }
+      &.start {  
+        inset-inline-end    : 0 !important ;
+        inset-inline-start  : auto ;
+      }
+      &.center {
+        inset-inline-start: calc(-50% + 30px);
+        transform: translate(-50%);
+
+        &.is_open {
+          transform: translate(-50%, 0);
+        }
+      }
+      &.top {
+        top: auto;
+        bottom: calc(100% + 6px);
+        transform: translateY(6px);
+
+        &.is_open {
+          transform: translateY(0);
+        }
+      }
+  }
+
+  // variant: full (you render header/body/footer inside) 
+  &_full &__menu {
+    display       : flex;
+    flex-direction: column;
+    min-width     : 380px;
+  }
+
+  // variant: simple (you render links inside) 
+  &_simple &__menu {
+    padding     : 0.5rem;
+    min-width   : 290px ;
+  }
+}

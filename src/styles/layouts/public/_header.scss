@@ -1,0 +1,122 @@
+
+
+.public_header {
+
+    position: sticky ;
+    top: 0 ;
+    inset-inline: 0 ;
+    z-index: 1000 !important ;
+    border-bottom: 1px solid $color_border ;
+    background-color: $base_color ;
+    box-shadow: $shadow_lg ;
+    .nav_link, logo_text {
+        color: $color_text !important ;
+    }
+    
+
+    .header_container {
+        min-height: 60px ;
+        @include flex(row, center, space-between, 10px) ;
+        transition: all 0.5s ease-in-out ;
+    }
+
+    .header_logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        flex-shrink: 0;
+        img {
+            height: 38px ;
+        }
+    
+
+    }
+
+    .nav_link {
+        color: $color_white ;
+        padding: 6px 10px ;
+        @include radius_large() ;
+        @include flex(row, center, center, 0) ;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: $color_hover ;
+            color: $color_primary ;
+        }
+
+    }
+
+}
+.scrolled {
+    background-color: $base_color ;
+    box-shadow: $shadow_lg ;
+    .nav_link, logo_text {
+        color: $color_text !important ;
+    }
+}
+
+
+
+
+.nav_link {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    @include radius_large() ;
+
+    .nav_link_label {
+        position: relative;
+        z-index: 2;
+        transition: color 0.25s ease;
+        font-weight: 500 ;
+    }
+
+    .nav_link_indicator {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: $color_hover ;
+        @include radius_large() ;
+    }
+
+    &.nav_link_active {
+        .nav_link_label {color: $color_primary ;}
+    }
+}
+
+
+
+
+
+
+
+
+.theme_toggle {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color_border ;
+
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    &:hover {transform: rotate(12deg);}
+
+    &:active {
+        transform: scale(0.92);
+    }
+
+    .theme_toggle_icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+}
+

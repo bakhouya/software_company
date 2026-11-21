@@ -1,0 +1,222 @@
+
+.about_section {
+  position: relative;
+  padding: 40px 0 10px 0;
+  isolation: isolate;
+//   overflow: hidden;
+  background: $base_color ;
+//   border-bottom: 1px solid $color_border ;
+}
+
+.about_layout {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  align-items: center;
+  gap: clamp($space_4, 7vw, 50px);
+}
+
+
+.about_image_wrapper {
+  position: relative;
+  width: 100%;
+  height: 470px;
+  isolation: isolate;
+  transform: perspective(1000px) rotateY(7deg);
+  transform-origin: bottom center ; 
+}
+.about_svg_defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.about_image_shape {
+  position: absolute;
+  inset: 0;
+  clip-path: url(#aboutOrganicShape);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+  }
+  &:hover img {
+    transform: scale(1.06);
+  }
+}
+
+
+
+// HIGHLIGHTS
+.about_highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px ;
+  margin: 12px 0;
+}
+
+.about_highlight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  opacity: 0.85;
+  padding: 8px 10px ;
+  border: 1px dashed $color_border ;
+  border-inline-end: 1px dashed $color_primary ;
+  border-block-end: 1px dashed $color_primary ;
+  @include radius_large() ;
+  background-color: $base_color ;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03); 
+}
+
+.about_check {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  @include radius_large() ;
+  color: $color_primary;
+  background: $color_hover ;
+}
+
+
+// RESPONSIVE
+@media (max-width: 992px) {
+  .about_section {
+    padding: 90px 0;
+  }
+
+  .about_layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .about_image {
+    min-height: 500px;
+  }
+
+  .about_content h2 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .about_layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .about_image {
+    min-height: 440px;
+  }
+
+  .about_content {
+    padding: 0;
+  }
+
+  .about_content h2 {
+    max-width: 600px;
+    font-size: clamp(38px, 8vw, 52px);
+  }
+}
+@media (max-width: 480px) {
+  .about_section {
+    padding: 70px 0;
+  }
+
+  .about_image {
+    min-height: 370px;
+  }
+
+  .about_image_badge {
+    top: 15px;
+    left: 15px;
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .about_image_caption {
+    left: 15px;
+    right: 15px;
+    bottom: 18px;
+
+    span {
+      font-size: 8px;
+    }
+  }
+
+  .about_content h2 {
+    font-size: 39px;
+    letter-spacing: -1.5px;
+  }
+
+  .about_description {
+    font-size: 13px;
+  }
+
+  .about_bottom_info {
+    gap: 12px;
+  }
+}
+
+
+
+
+
+
+
+.about_section {
+
+    .about_bg_shapes {
+        position: absolute;
+        top: 50%;
+        inset-inline-end: -230px;
+        transform: translateY(-50%);
+        width: 650px;
+        height: 650px;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .about_bg_circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        display: block;
+    }
+
+    .about_bg_circle_outer {
+        width: 620px;
+        height: 620px;
+
+        background: radial-gradient(
+            circle,
+            rgba($color_primary, 0.16) 0%,
+            rgba($color_primary, 0.09) 35%,
+            rgba($color_secondary, 0.07) 65%,
+            transparent 100%
+        );
+
+        border: 1px solid rgba($color_primary, 0.25);
+    }
+
+    .about_bg_circle_inner {
+        width: 420px;
+        height: 420px;
+
+        background: radial-gradient(
+            circle,
+            rgba($color_secondary, 0.17) 0%,
+            rgba($color_secondary, 0.09) 35%,
+            rgba($color_primary, 0.07) 70%,
+            transparent 100%
+        );
+
+        border: 1px solid rgba($color_secondary, 0.25);
+    }
+
+}

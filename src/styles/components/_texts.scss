@@ -1,0 +1,171 @@
+
+
+
+// =======================================================================================
+// COMPONENTS: TEXTS
+// Global text utility classes.
+// Naming convention: underscores (text_center, not text-center).
+// Built on top of the typography mixins from mixins/_typography.
+// =======================================================================================
+
+// -------------------------------------------------------------------------------
+// BASE SIZES
+// Each class applies a full typographic style (family, size,
+// weight, line-height, letter-spacing, color) via its mixin.
+// -------------------------------------------------------------------------------
+.text_body    { @include text-body; }
+.text_h1      { @include text-h1; }
+.text_h2      { @include text-h2; }
+.text_h3      { @include text-h3; }
+.text_h4      { @include text-h4; }
+.text_h5      { @include text-h5; }
+.text_h6      { @include text-h6; }
+
+.text_display_sm { @include text-display-sm; }
+.text_display_md { @include text-display-md; }
+.text_display_lg { @include text-display-lg; }
+
+.text_lead    { @include text-lead; }
+.text_small   { @include text-small; }
+.text_caption { @include text-caption; }
+.text_eyebrow { @include text-eyebrow; }
+.text_label   { @include text-label; }
+.text_code    { @include text-code; }
+.text_quote   { @include text-quote; }
+// Arabic-friendly rendering (kerning, ligatures, smoothing)
+.text_arabic { @include text-arabic; }
+// -------------------------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------------------------
+// ALIGNMENT
+// Logical properties (start/end) respect RTL automatically.
+// -------------------------------------------------------------------------------
+.text_start  { text-align: start; }
+.text_center { text-align: center; }
+.text_end    { text-align: end; }
+.text_justify { text-align: justify; }
+// -------------------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------------------
+// COLORS
+// -------------------------------------------------------------------------------
+.text_inherit   { color: inherit; }
+.text_current   { color: currentColor; }
+.text_transparent { color: transparent; }
+// see more colors text in this dir "masters/utilities.scss
+// -------------------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------------------
+// FONT WEIGHTS
+// -------------------------------------------------------------------------------
+@each $name, $value in $font-weights {.fw_#{$name} {font-weight: $value;}}
+// -------------------------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------------------------
+// FONT STYLE & TRANSFORM
+// -------------------------------------------------------------------------------
+.text_italic    { font-style: italic; }
+.text_not_italic { font-style: normal; }
+
+.text_uppercase  { text-transform: uppercase; }
+.text_lowercase  { text-transform: lowercase; }
+.text_capitalize { text-transform: capitalize; }
+.text_none_transform { text-transform: none; }
+// -------------------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------------------
+// DECORATION
+// -------------------------------------------------------------------------------
+.text_underline      { text-decoration: underline; }
+.text_line_through   { text-decoration: line-through; }
+.text_no_underline   { text-decoration: none; }
+.text_underline_offset { text-underline-offset: 0.2em; }
+// -------------------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------------------
+// WRAPPING & BREAKING
+// -------------------------------------------------------------------------------
+.text_wrap    { white-space: normal; }
+.text_nowrap  { white-space: nowrap; }
+.text_pre     { white-space: pre; }
+.text_pre_wrap { white-space: pre-wrap; }
+.text_break   { word-break: break-word; overflow-wrap: anywhere; }
+.text_balance { text-wrap: balance; }
+.text_pretty  { text-wrap: pretty; }
+// -------------------------------------------------------------------------------
+// Single-line truncation
+.text_truncate { @include truncate-single; }
+// Multi-line truncation via mixin
+.text_clamp { @include truncate(3); }
+// -------------------------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------------------------
+// MULTI-LINE LIMIT: LOOP 1..12
+// Usage: .text_limit_3 { -webkit-line-clamp: 3; ... }
+// Generated with @for so we do not repeat 12 blocks by hand.
+// -------------------------------------------------------------------------------
+@for $i from 1 through 12 {
+  .text_limit_#{$i} {
+    display: -webkit-box;
+    -webkit-line-clamp: $i;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+// -------------------------------------------------------------------------------
+
+
+
+// -------------------------------------------------------------------------------
+// LINE HEIGHT OVERRIDES
+// -------------------------------------------------------------------------------
+@each $name, $value in $line_heights {.lh_#{$name} {line-height: $value;}}
+.lh_50 {line-height: 60px ;}
+.lh_60 {line-height: 60px ;}
+@for $i from 1 through 199 {
+  .lh_#{$i} {
+    line-height: #{$i}px ;
+  }
+}
+// -------------------------------------------------------------------------------
+// LETTER SPACING OVERRIDES
+// -------------------------------------------------------------------------------
+@each $name, $value in $letter_spacings {.ls_#{$name} {letter-spacing: $value;}}
+// -------------------------------------------------------------------------------
+// LETTER SPACING OVERRIDES
+// -------------------------------------------------------------------------------
+@each $name, $value in $font_sizes {.fs_#{$name} {font-size: $value;}}
+// -------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------
+// RESPONSIVE ALIGNMENT HELPERS
+// Mobile-first: base = mobile, then override on larger screens.
+// -------------------------------------------------------------------------------
+.text_center_md { @include media-md { text-align: center; } }
+.text_start_md  { @include media-md { text-align: start; } }
+.text_end_md    { @include media-md { text-align: end; } }
+
+.text_center_lg { @include media-lg { text-align: center; } }
+.text_start_lg  { @include media-lg { text-align: start; } }
+.text_end_lg    { @include media-lg { text-align: end; } }
+// -------------------------------------------------------------------------------
+
+.text_gradient {
+  background: linear-gradient(90deg, $color_text, $color_primary, $color_text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+// =======================================================================================

@@ -1,0 +1,39 @@
+
+
+//========================================================================================
+// MIXINS: SURFACES & DECORATION
+// Cards, dark surfaces, dividers, overlays, gradients.
+//========================================================================================
+@mixin card($radius: $radius_lg, $shadow: $shadow_sm) {
+  background: $color_white;
+  border: $border_width_thin solid $color_line;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+@mixin surface_dark {
+  background: $color_ink;
+  color: $color_ivory;
+
+  a { color: $color_ivory; }
+  h1, h2, h3, h4 { color: $color_ivory; }
+}
+@mixin divider_gold($width: 48px) {
+  width: $width;
+  height: 2px;
+  background: $color_gold;
+  border: 0;
+}
+@mixin overlay($opacity: $opacity_overlay, $color: $color_ink) {
+  position: absolute;
+  inset: 0;
+  background: rgba($color, $opacity);
+  pointer-events: none;
+}
+// Subtle gradient accents (used in hero sections)
+@mixin gradient_ink {
+  background: linear-gradient(135deg, $color_ink 0%, $color_ink_2 100%);
+}
+@mixin gradient_gold {
+  background: linear-gradient(135deg, $color_gold 0%, $color_gold_soft 100%);
+}
+//========================================================================================

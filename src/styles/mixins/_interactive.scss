@@ -1,0 +1,54 @@
+
+
+
+
+//========================================================================================
+// MIXINS: INTERACTIVE STATES
+// Focus rings, hover behaviors, disabled states.
+//========================================================================================
+@mixin focus_ring($color: $color_focus, $offset: 3px) {
+  outline: 2px solid $color;
+  outline-offset: $offset;
+  border-radius: $radius_sm;
+}
+@mixin focus_ring_inset {
+  outline: 2px solid $color_focus;
+  outline-offset: -2px;
+}
+@mixin hover_lift($y: _2px, $shadow: $shadow_lg) {
+  transition: transform $dur_base $ease_smooth, box-shadow $dur_base $ease_smooth;
+  @include can_hover {
+    &:hover {
+      transform: translateY($y);
+      box-shadow: $shadow;
+    }
+  }
+
+  @include reduced_motion {
+    transition: none;
+    &:hover { transform: none; }
+  }
+}
+@mixin hover_color($fg: $color_ink, $bg: transparent) {
+  transition: color $dur_base $ease_smooth, background-color $dur_base $ease_smooth, border-color $dur_base $ease_smooth;
+  @include can_hover {
+    &:hover { color: $fg; background-color: $bg; }
+  }
+}
+@mixin interactive {
+  cursor: pointer;
+  transition: color $dur_fast $ease_smooth, background-color $dur_fast $ease_smooth, border-color $dur_fast $ease_smooth, transform $dur_fast $ease_smooth;
+
+  &:active { transform: translateY(1px); }
+
+  @include reduced_motion {
+    transition: none;
+    &:active { transform: none; }
+  }
+}
+@mixin disabled_state {
+  opacity: $opacity_disabled;
+  pointer_events: none;
+  cursor: not_allowed;
+}
+//========================================================================================

@@ -1,0 +1,35 @@
+
+
+
+
+//========================================================================================
+// MIXINS: FORM CONTROLS
+// Base input styling and error state.
+//========================================================================================
+@mixin input_base {
+  width: 100%;
+  padding: $space_3 $space_4;
+  font-family: $font_body;
+  font-size: $fs_base;
+  line-height: $lh_normal;
+  color: $color_text;
+  background: $color_white;
+  border: $border_width_thin solid $color_line_strong;
+  border_radius: $radius_md;
+  transition: border-color $dur_base $ease_smooth, box-shadow $dur_base $ease_smooth;
+
+  &::placeholder { color: $color_subtle; }
+
+  &:focus {
+    outline: none;
+    border-color: $color_gold;
+    box-shadow: $shadow_focus;
+  }
+
+  &:disabled { @include disabled_state; }
+}
+@mixin input_error {
+  border-color: $color_danger;
+  box-shadow: 0 0 0 3px rgba($color_danger, 0.15);
+}
+//========================================================================================

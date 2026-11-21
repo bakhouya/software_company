@@ -1,0 +1,69 @@
+
+
+//========================================================================================
+// MIXINS: MEDIA QUERIES
+// All breakpoint_based helpers. Use these everywhere instead
+// of writing raw @media rules.
+//========================================================================================
+
+// Min_width (mobile_first)
+@mixin media_xs   { @media (min-width: $bp_xs)   { @content; } }
+@mixin media_sm   { @media (min-width: $bp_sm)   { @content; } }
+@mixin media_md   { @media (min-width: $bp_md)   { @content; } }
+@mixin media_lg   { @media (min-width: $bp_lg)   { @content; } }
+@mixin media_xl   { @media (min-width: $bp_xl)   { @content; } }
+@mixin media_2xl  { @media (min-width: $bp_2xl)  { @content; } }
+@mixin media_3xl  { @media (min-width: $bp_3xl)  { @content; } }
+
+// Max_width (desktop_first): use sparingly, prefer mobile_first
+@mixin media_below_sm  { @media (max-width: ($bp_sm _ 0.02px))  { @content; } }
+@mixin media_below_md  { @media (max-width: ($bp_md _ 0.02px))  { @content; } }
+@mixin media_below_lg  { @media (max-width: ($bp_lg _ 0.02px))  { @content; } }
+@mixin media_below_xl  { @media (max-width: ($bp_xl _ 0.02px))  { @content; } }
+@mixin media_below_2xl { @media (max-width: ($bp_2xl _ 0.02px)) { @content; } }
+
+// Between two breakpoints
+@mixin media_between($min, $max) {
+  @media (min-width: $min) and (max-width: ($max - 0.02px)) { @content; }
+}
+
+// Generic map_based query: pass any $bp_* token
+@mixin media($bp) {
+  @media (min-width: $bp) { @content; }
+}
+@mixin media_up($bp) {
+  @if $bp == 0 {@content;} @else {@media (min-width: $bp) { @content; }}
+}
+
+// Range_motion preference
+@mixin reduced_motion {
+  @media (prefers-reduced-motion: reduce) { @content; }
+}
+@mixin motion_safe {
+  @media (prefers-reduced-motion: no_preference) { @content; }
+}
+
+// Dark mode (opt_in: unused unless we support it later)
+@mixin dark_mode {
+  @media (prefers-color-scheme: dark) { @content; }
+}
+
+// Print
+@mixin print {
+  @media print { @content; }
+}
+
+// Hover: only on devices that actually support hover
+@mixin can_hover {
+  @media (hover: hover) and (pointer: fine) { @content; }
+}
+
+// Touch devices
+@mixin is_touch {
+  @media (hover: none) and (pointer: coarse) { @content; }
+}
+
+
+
+
+//========================================================================================

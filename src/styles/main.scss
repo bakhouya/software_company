@@ -1,0 +1,60 @@
+
+
+// ====================================================================================
+// MAIN: single entry point for the whole stylesheet system.
+// Imported exactly once, in src/main.tsx: => import './styles/main.scss';
+//
+// Every component file can then use any token ($color-ink,
+// $space-4, ) and any mixin (@include text-h1, @include
+// media-md, ) WITHOUT writing @use at the top. This works
+// because vite.config.ts injects tokens + mixins through
+// additionalData before each component's SCSS. 
+// ====================================================================================
+
+@import  'tokens/index';
+@import  'mixins/index';
+
+
+@import 'master/base';
+@import 'master/utilities';
+@import 'master/scrollbar';
+@import 'utils/imports';
+
+@import 'layouts/public/header';
+@import 'layouts/public/Footer';
+
+
+@import 'components/texts';
+@import 'components/backgrounds'; 
+@import 'components/buttons'; 
+@import 'components/avatars'; 
+@import 'components/dropdown'; 
+@import 'components/form'; 
+@import 'components/PageLoaderProvider'; 
+@import 'components/shapes'; 
+
+ 
+
+@import 'pages/public/homePage/hero'; 
+@import 'pages/public/homePage/BusinessSectors'; 
+@import 'pages/public/homePage/ServicesSection'; 
+@import 'pages/public/homePage/Projects'; 
+@import 'pages/public/homePage/FAQSection'; 
+@import 'pages/public/homePage/ProcessSection'; 
+@import 'pages/public/homePage/AboutSection'; 
+@import 'pages/public/homePage/ContactSection'; 
+@import 'pages/public/homePage/TestimonialsSection'; 
+// @import 'pages/public/TestimonialsSection.scss'; 
+// @import 'pages/public/Category'; 
+// @import 'pages/public/Services'; 
+// @import 'pages/public/MoreToLove';
+// @import 'pages/public/stories';
+
+// @import 'pages/public/product'; 
+// @import 'pages/public/shop'; 
+// @import 'pages/public/chat'; 
+// @import 'pages/public/cart'; 
+
+
+
+// ====================================================================================

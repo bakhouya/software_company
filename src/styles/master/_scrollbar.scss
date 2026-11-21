@@ -1,0 +1,29 @@
+
+
+
+// Chrome, Edge, Safari: full control (rounded thumb, hover color)
+*::-webkit-scrollbar {
+  width:  12px ;
+  height: 8px ;
+  background: $bg_color ;
+}
+
+*::-webkit-scrollbar-track {
+  background: $base_color ;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: $color_black ;
+    background-clip: content-box;
+    border: 2px solid transparent;
+    border-radius: $radius_full;
+
+    &:hover {
+        background-color: $color_primary ;
+    }
+}
+
+*::-webkit-scrollbar-corner { background: transparent; }
+*::-webkit-scrollbar-button { display: none; }
+
+

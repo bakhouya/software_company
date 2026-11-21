@@ -1,0 +1,30 @@
+
+
+
+// ------------------------------------------------------------------------------------------------------------------
+// COMPONENTS: BACKGROUNDS
+// Background utility classes.
+// Naming: underscores (bg_primary, bg_success_1, *).
+// Tints: each semantic color gets _1* _5 (lighter as index grows).
+// Built with Sass rgba($color, $alpha) for clean tints.
+// ------------------------------------------------------------------------------------------------------------------
+.bg_transparent { background-color: transparent; }
+.bg_current     { background-color: currentColor; }
+.bg_inherit     { background-color: inherit; }
+// see more background colors text in this dir "masters/utilities.scss
+// ------------------------------------------------------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------------------------------------------------------
+// 5. TINTS: LOOP 1..5
+// Each level is lighter than the previous one.
+// Level 1 = strongest tint, level 5 = faintest.
+// Example: .bg_primary_1 { background: rgba($color_primary, 0.20); }
+// ------------------------------------------------------------------------------------------------------------------
+@for $i from 1 through 5 {.bg_primary_#{$i} {background-color: rgba($color_primary, 0.05 * (6 - $i));}}
+@for $i from 1 through 5 {.bg_secondary_#{$i} {background-color: rgba($color_secondary, 0.05 * (6 - $i));}}
+@for $i from 1 through 5 {.bg_danger_#{$i} {background-color: rgba($color-danger, 0.05 * (6 - $i));}}
+@for $i from 1 through 5 {.bg_success_#{$i} {background-color: rgba($color-success, 0.05 * (6 - $i));}}
+@for $i from 1 through 5 {.bg_warning_#{$i} {background-color: rgba($color-warning, 0.05 * (6 - $i));}}
+@for $i from 1 through 5 {.bg_info_#{$i} {background-color: rgba($color-info, 0.05 * (6 - $i));}}
+// ------------------------------------------------------------------------------------------------------------------

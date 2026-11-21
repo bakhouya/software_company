@@ -1,0 +1,169 @@
+
+
+.z_index_3 {
+    z-index: 4 !important ;
+    position: relative;
+}
+.card {
+    &:hover {
+        .title {color: $color_primary !important ;}
+    }
+}
+
+.services_section {
+    position: relative;
+    padding: 30px 0 50px 0;
+    overflow: hidden;
+    background-color: $color_black ;
+    border-block: 1px solid $color_border ;
+    // background-image: url("../../../../assets/images/coding-night.jpg");
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     inset: 0;
+    //     // z-index: 1 ;
+    //     background: linear-gradient( 135deg, rgba(5, 10, 25, 0.849), rgba(10, 15, 35, 0.753));
+    // }
+
+    .services_grid {
+        position: relative ;
+        z-index: 2 ;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px ;
+        @include radius() ;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03); 
+
+        transform: perspective(1000px) rotateX(4deg);
+        transform-origin: bottom center ;
+    }
+
+    .service_card {
+        background-color: $base_color;
+        @include radius() ;
+        cursor: pointer ;
+        position: relative;
+        @include flex(column, center, center, 0) ;
+        min-height: 245px;
+        padding: $space_5 ;
+        overflow: hidden;
+        border: 2px solid $color_border ;
+        transition: all 0.5s ease-in-out ;
+        &:hover {
+            border-color: $color_primary ;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03); 
+        }
+    }
+
+}
+
+
+.quality_section {
+    position: relative;
+    padding: 40px 0 40px 0;
+
+    .quality_container {
+        position: relative;
+        @include flex(row, start, flex-start, 40px) ;
+    }
+    .quality_header {
+        width: 50% ;
+        position: sticky !important;
+        top: 80px ;
+        .title {line-height: 55px ;}
+    }
+    .quality_grid {
+        flex: 1 ;
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 15px ;
+    }
+    .quality_card {
+        @include flex(row, center, auto, $space_4) ;
+        border: 1px solid $color_border ;
+        padding: $space_3 ;
+        @include radius() ;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03); 
+        transform: perspective(1000px) rotateY(-4deg);
+        transform-origin: bottom center ;
+        background-color: $base_color ;
+        transition: all 0.5s ease-in-out ;
+        &:first-child {
+            border: 1px dashed $color_primary ;
+        }
+        &:last-child {
+            border: 1px dashed $color_secondary ;
+        }
+        &:hover {
+            border-color: $color_primary ;
+            transform: none ;
+        }
+    }
+}
+
+.waves_1 {
+  position: absolute;
+  inset-inline : 100px;
+  inset-block-end: -200px;
+
+  height: 350px ;
+  padding: 45px ;
+  transform: perspective(1000px) rotateX(30deg);
+  transform-origin: bottom center;
+
+  border: 1px solid rgba($color_primary, 0.2);
+  border-radius: 42% 58% 48% 52% / 54% 43% 57% 46%;
+  corner-shape: $squircle;
+
+  background: radial-gradient( circle at 50% 50%, rgba($color_primary, 0.10), rgba($color_primary, 0.025) 45%, transparent 72%);
+  box-shadow: 0 0 80px rgba($color_primary, 0.04), inset 0 0 50px rgba($color_primary, 0.035);
+
+  pointer-events: none;
+  z-index: 0;
+
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    border-radius: 42% 58% 48% 52% / 54% 43% 57% 46%;
+    pointer-events: none;
+  }
+
+  &::before {
+    inset: 25px;
+    border: 1px dashed rgba($color_primary, 0.3);
+    corner-shape: $squircle;
+  }
+
+  &::after {
+    inset: 65px;
+    border: 1px solid rgba($color_primary, 0.14);
+    corner-shape: $squircle;
+    box-shadow: 0 0 30px rgba($color_primary, 0.06);
+  }
+
+  .waves_2 {
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid rgba($color_primary, 0.22);
+    border-radius: 42% 58% 48% 52% / 54% 43% 57% 46%;
+    corner-shape: $squircle;
+    background: rgba($color_hover, 0.08);
+    box-shadow: inset 0 0 45px rgba($color_primary, 0.045), 0 0 45px rgba($color_primary, 0.035);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 90px;
+      border: 1px dashed rgba($color_primary, 0.18);
+      border-radius: 38% 62% 55% 45% / 48% 55% 45% 52%;
+      corner-shape: $squircle;
+    }
+  }
+
+}

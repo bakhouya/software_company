@@ -1,0 +1,106 @@
+
+.section_header {
+    @include flex(row, center, center, 0) ;
+    margin-bottom: $space_4 ;
+    width: 70% ;
+    margin-inline: auto ;
+}
+
+
+.business_sectors {
+    position: relative;
+    padding: 30px 0 40px 0;
+    overflow: hidden;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: $space_3 ;
+    }
+    .sector_card {
+        transform: perspective(1000px) rotateX(10deg);
+        transform-origin: bottom center ;
+        cursor: pointer !important;
+        position: relative;
+        padding: $space_5 ;
+        @include flex(column, auto, auto, 0) ;
+        overflow: hidden;
+        isolation: isolate;
+        background-color: $base_color ;
+        border: 2px dashed $color_border ;
+        @include radius() ;
+        transition:  all 0.5s ease-in-out ;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03);
+
+        &:nth-child(3){
+            border: 1px dashed $color_primary;
+        }
+        &:nth-child(1), &:nth-child(5) {
+            border: 1px dashed $color_secondary;
+        }
+        &:before {
+            content: "" ;
+            position: absolute ;
+            height: 160px ;
+            width: 160px ;
+            background-color: $color_hover ;
+            left: -80px ;
+            top: -80px ;
+            border-radius: 50% ;
+        }
+        &:after {
+            content: "" ;
+            position: absolute ;
+            height: 160px ;
+            width: 160px ;
+            background-color: $color_hover ;
+            right: -80px ;
+            bottom: -80px ;
+            border-radius: 50% ;
+        }
+        &:nth-child(1) {&:before { display: none ;}}
+        &:nth-child(2), &:nth-child(3) {&:before {bottom: -80px ; top: auto; }}
+        &:nth-child(3) {&:after { display: none ;}}
+        &:nth-child(4) {&:before {right: -80px ; left: auto; } &:after { display: none ;}}
+        &:nth-child(5) {&:after {top: -80px ; bottom: auto; }}
+        &:nth-child(6) {&:after { display: none ;}}
+
+       
+
+        &:hover {
+            box-shadow: none; transform: translateY(-5px);
+        }
+
+        &__content {
+        flex: 1;
+
+        h3 {
+            margin: 0 0 10px;
+            color: var(--sector-text);
+            font-size: 17px;
+            font-weight: 750;
+            line-height: 1.7;
+        }
+
+        p {
+            margin: 0;
+            color: var(--sector-muted);
+            font-size: 13px;
+            line-height: 2;
+        }
+        }
+
+        &__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: $space_4 ;
+            padding-top: $space_4 ;
+            border-top: 1px solid $color_border ;
+        }
+
+    }
+
+}
+
+

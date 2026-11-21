@@ -1,0 +1,166 @@
+
+
+
+
+//========================================================================================
+// TOKENS: TYPOGRAPHY
+// Font families, weights, line_heights, letter_spacing and
+// responsive font sizes (clamp_based).
+//========================================================================================
+// @import url('https://cdn.jsdelivr.net/npm/@fontsource/ibm_plex_sans_arabic@5.3.0/index.css');
+// @import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/sora@5.3.0/index.css');
+// @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap');
+// ------------------------------------------------------------
+// Font families
+// ------------------------------------------------------------
+$font_arabic:             'IBM Plex Sans Arabic', 'IBM Plex Sans Arabic', system-ui, sans-serif ;
+$font_arabic_heading:     $font_arabic;
+
+$font_latin:              "General Sans", "Clash Display", "Plus Jakarta Sans", 'Google Sans', system-ui, -apple-system, 'Segoe UI', sans-serif ;
+$font_latin_heading:      $font_latin ;
+
+$font_mono:               'JetBrains Mono', 'Fira Code', ui-monospace, monospace ;
+
+// $font_latin:             "TT Norms Pro Trial", "TT Norms Pro Trial Expanded", "Outfit", "Bricolage Grotesque", 'JetBrains Mono', 'Sora Variable', system-ui, -apple-system, 'Segoe UI', sans-serif ;
+// $font_latin_heading:      $font_latin ;
+
+// Defaults (Arabic is the primary language of the site)  "TT Norms Pro Trial Expanded",
+$font_body:               $font_arabic ;
+$font_heading:            $font_arabic_heading ;
+
+// ------------------------------------------------------------
+// Font weights
+// ------------------------------------------------------------
+$fw_thin:                 100;
+$fw_extralight:           200;
+$fw_light:                300;
+$fw_regular:              400;
+$fw_medium:               500;
+$fw_semibold:             600;
+$fw_bold:                 700;
+$fw_extrabold:            800;
+$fw_black:                900;
+
+// ------------------------------------------------------------
+// Line heights
+// ------------------------------------------------------------
+$lh_none:                 1;
+$lh_tight:                1.15;
+$lh_snug:                 1.3;
+$lh_normal:               1.5;
+$lh_relaxed:              1.65;
+$lh_loose:                1.8;
+
+// ------------------------------------------------------------
+// Letter spacing
+// ------------------------------------------------------------
+$ls_tight:                -0.02em;
+$ls_normal:               0;
+$ls_wide:                 0.04em;
+$ls_wider:                0.08em;
+$ls_widest:               0.12em;
+
+// ------------------------------------------------------------
+// Font sizes: fluid via clamp(min, preferred, max)
+// ------------------------------------------------------------
+$fs_xs:                   clamp(0.72rem, 0.70rem + 0.10vw, 0.78rem);
+$fs_sm:                   clamp(0.82rem, 0.80rem + 0.15vw, 0.88rem);
+$fs_base:                 clamp(0.94rem, 0.92rem + 0.20vw, 1.00rem);
+$fs_md:                   clamp(1.02rem, 0.98rem + 0.30vw, 1.12rem);
+$fs_lg:                   clamp(1.14rem, 1.08rem + 0.45vw, 1.30rem);
+$fs_xl:                   clamp(1.30rem, 1.20rem + 0.70vw, 1.60rem);
+$fs_2xl:                  clamp(1.55rem, 1.40rem + 1.10vw, 2.00rem);
+$fs_3xl:                  clamp(1.85rem, 1.60rem + 1.60vw, 2.55rem);
+$fs_4xl:                  clamp(2.20rem, 1.80rem + 2.20vw, 3.20rem);
+$fs_5xl:                  clamp(2.60rem, 2.00rem + 3.00vw, 4.00rem);
+$fs_6xl:                  clamp(3.10rem, 2.20rem + 4.00vw, 5.00rem);
+
+// Display sizes for hero titles
+$fs_display_sm:           clamp(2.00rem, 1.60rem + 2.00vw, 3.00rem);
+$fs_display_md:           clamp(2.50rem, 1.90rem + 3.00vw, 4.00rem);
+$fs_display_lg:           clamp(3.00rem, 2.20rem + 4.00vw, 5.20rem);
+//========================================================================================
+
+
+
+
+
+
+
+
+
+
+//========================================================================================
+// TYPOGRAPHY MAPS
+// Centralized typography tokens for generating utility classes with Sass loops.
+//========================================================================================
+
+// ------------------------------------------------------------
+// Font weights
+// ------------------------------------------------------------
+$font_weights: (
+  "thin": $fw_thin,
+  "extralight": $fw_extralight,
+  "light": $fw_light,
+  "regular": $fw_regular,
+  "medium": $fw_medium,
+  "semibold": $fw_semibold,
+  "bold": $fw_bold,
+  "extrabold": $fw_extrabold,
+  "black": $fw_black
+);
+
+// ------------------------------------------------------------
+// Line heights
+// ------------------------------------------------------------
+$line_heights: (
+  "none": $lh_none,
+  "tight": $lh_tight,
+  "snug": $lh_snug,
+  "normal": $lh_normal,
+  "relaxed": $lh_relaxed,
+  "loose": $lh_loose
+);
+
+// ------------------------------------------------------------
+// Letter spacing
+// ------------------------------------------------------------
+$letter_spacings: (
+  "tight": $ls_tight,
+  "normal": $ls_normal,
+  "wide": $ls_wide,
+  "wider": $ls_wider,
+  "widest": $ls_widest
+);
+
+// ------------------------------------------------------------
+// Font sizes
+// ------------------------------------------------------------
+$font_sizes: (
+  "xs": $fs_xs,
+  "sm": $fs_sm,
+  "base": $fs_base,
+  "md": $fs_md,
+  "lg": $fs_lg,
+  "xl": $fs_xl,
+  "2xl": $fs_2xl,
+  "3xl": $fs_3xl,
+  "4xl": $fs_4xl,
+  "5xl": $fs_5xl,
+  "6xl": $fs_6xl
+);
+
+// ------------------------------------------------------------
+// Display font sizes
+// ------------------------------------------------------------
+$display_sizes: (
+  "sm": $fs_display_sm,
+  "md": $fs_display_md,
+  "lg": $fs_display_lg
+);
+//========================================================================================

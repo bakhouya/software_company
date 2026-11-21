@@ -1,0 +1,323 @@
+
+//========================================================================================
+// THEME STYLES
+// Import Light and Dark theme definitions.
+//========================================================================================
+@import 'themes/light', 'themes/dark';
+
+
+//========================================================================================
+// BRAND COLORS: FIXED ACROSS THEMES
+// These colors define the brand identity and semantic states.
+// Use them for branding, buttons, badges, and status indicators.
+//========================================================================================
+$color_primary   : #fd5304;
+$color_secondary : #04bea6;
+
+$color_primary   : #2bc076;
+$color_secondary : #F59E0B;
+
+// $color_primary   : #078f88;
+// $color_secondary : #E9B949;
+
+$color_primary   : #ff7c01;
+$color_secondary : #099b93;
+
+// $color_primary   : #ff1100;
+// $color_secondary : #0ae0b2;
+
+// $color_primary: #C45B32;
+// $color_secondary: #B5A18A;
+
+
+$gradient_primary   : linear-gradient(135deg, $color_primary 0%, rgb($color_primary, 0.5) 50%, rgb($color_primary, 0.5) 100%);
+$gradient_secondary   : linear-gradient(135deg, $color_secondary 0%, rgb($color_secondary, 0.8) 50%, rgb($color_secondary, 0.6) 100%);
+
+//========================================================================================
+// GOLD PALETTE: ACCENT COLORS
+// Use for premium elements, ratings, highlights, and decorative details.
+//========================================================================================
+
+// Main gold accent.
+// Use for ratings, premium badges, and small visual highlights.
+$color_gold         : #ff8c00;
+
+// Soft gold.
+// Use for subtle gold backgrounds, highlighted areas, and decorative surfaces.
+$color_gold_soft    : #E6C48A;
+
+// Deep gold.
+// Use for stronger gold accents or emphasis when a darker shade is needed.
+$color_gold_deep    : #9A6524;
+
+
+//========================================================================================
+// SEMANTIC COLORS: STATUS AND FEEDBACK
+// These colors communicate meaning and remain consistent across themes.
+// Check contrast when using them with text or backgrounds.
+//========================================================================================
+
+// Danger / Error.
+// Use for errors, destructive actions, invalid fields, and critical alerts.
+$color_danger       : #DC2626;
+
+// Soft danger.
+// Use for error message backgrounds and subtle destructive_state surfaces.
+$color_danger_soft  : #F9E4E2;
+
+
+// Success.
+// Use for success messages, completed actions, and positive status indicators.
+$color_success      : #15803D;
+
+// Soft success.
+// Use for success notification backgrounds and positive status surfaces.
+$color_success_soft : #E1F1E9;
+
+
+// Warning.
+// Use for warnings, pending states, and actions requiring attention.
+$color_warning      : #B4822A;
+
+// Soft warning.
+// Use for warning notification backgrounds and caution_state surfaces.
+$color_warning_soft : #FBF1DD;
+
+
+// Information.
+// Use for informational messages, help indicators, and neutral notifications.
+$color_info         : #1F5FA8;
+
+// Soft information.
+// Use for informational notification backgrounds and help_state surfaces.
+$color_info_soft    : #E3EEF9;
+
+
+//========================================================================================
+// FIXED NEUTRALS
+// Use only when a pure white or black color is specifically required.
+// For general page backgrounds and text, prefer the theme variables below.
+//========================================================================================
+
+// Pure white.
+// Useful for white icons, text on dark brand buttons, or explicit white surfaces.
+$color_white        : #FFFFFF;
+
+// Pure black.
+// Useful for explicit black details; avoid using it as general dark_theme text.
+$color_black        : #000000;
+
+
+//========================================================================================
+// THEME_DEPENDENT COLORS
+// These Sass variables reference CSS custom properties.
+// Their actual values are defined by the active Light or Dark theme.
+// Use them for components that must adapt automatically to the selected theme.
+//========================================================================================
+
+// Main page background.
+// Use for the overall application or page background.
+$bg_color               : var(--bg_color);
+$bg_gradient            : var(--bg_gradient);
+
+// Base surface color.
+// Use for cards, panels, modals, dropdowns, and input backgrounds.
+$base_color             : var(--base_color);
+
+// Hover background.
+// Use for hover states on cards, menu items, table rows, and interactive elements.
+// $color_hover            : var(--color_hover);
+$color_hover            : rgba($color_primary, 0.08);
+
+// Standard border color.
+// Use for inputs, cards, containers, and component outlines.
+$color_border           : var(--color_border);
+
+
+//========================================================================================
+// INK PALETTE: THEME_ADAPTIVE SURFACES AND CONTRAST
+// Use according to the active theme rather than assuming these are always dark colors.
+//========================================================================================
+
+// Main ink tone.
+// Use for strong brand surfaces, headings, or high_emphasis elements where appropriate.
+$color_ink              : var(--color_ink);
+
+// Secondary ink tone.
+// Use for secondary surfaces, emphasis, or hover states.
+$color_ink_2            : var(--color_ink_2);
+
+// Tertiary ink tone.
+// Use for subtle emphasis, supporting surfaces, or layered visual elements.
+$color_ink_3            : var(--color_ink_3);
+
+
+//========================================================================================
+// IVORY PALETTE: SUBTLE THEME_ADAPTIVE SURFACES
+// Use for lightly tinted backgrounds and low_emphasis component surfaces.
+//========================================================================================
+
+// Very subtle tinted surface.
+// Use for subtle backgrounds and low_emphasis sections.
+$color_ivory            : var(--color_ivory);
+
+// Slightly stronger tinted surface.
+// Use for highlighted cards, grouped content, and subtle selection backgrounds.
+$color_ivory_2          : var(--color_ivory_2);
+
+// Strongest tint in this palette.
+// Use for more noticeable highlights while keeping the surface visually soft.
+$color_ivory_3          : var(--color_ivory_3);
+
+
+//========================================================================================
+// TEXT COLORS: THEME_ADAPTIVE
+// Use these instead of hardcoding text colors in components.
+//========================================================================================
+
+// Default text.
+// Use for paragraphs, labels, and general content.
+$color_text             : var(--color_text);
+
+// Strong text.
+// Use for titles, important values, and high_emphasis content.
+$color_text_strong      : var(--color_text_strong);
+
+// Muted text.
+// Use for descriptions, secondary labels, timestamps, and supporting information.
+$color_muted            : var(--color_muted);
+
+// Subtle text.
+// Use for placeholders, disabled details, and low_emphasis metadata.
+// Check readability before using for important information.
+$color_subtle           : var(--color_subtle);
+
+
+//========================================================================================
+// BORDERS, DIVIDERS, AND SEPARATORS: THEME_ADAPTIVE
+// Use these tokens to maintain consistent separation between interface elements.
+//========================================================================================
+
+// Standard divider.
+// Use for subtle separators and component borders.
+$color_line             : var(--color_line);
+
+// Strong divider.
+// Use when a more visible separation is needed.
+$color_line_strong      : var(--color_line_strong);
+
+// Light divider.
+// Use for subtle separators on suitable surfaces; verify contrast in both themes.
+$color_line_light       : var(--color_line_light);
+
+// Stronger light divider.
+// Use when the light_divider variant needs more visibility.
+$color_line_light_strong: var(--color_line_light_strong);
+
+
+//========================================================================================
+// FOCUS ACCESSIBILITY
+// Use for keyboard focus indicators on buttons, links, inputs, and other controls.
+//========================================================================================
+
+// Focus ring color.
+// Keep keyboard focus clearly visible against both light and dark surfaces.
+$color_focus            : var(--color_focus);
+
+
+//========================================================================================
+// SHADOWS: THEME_ADAPTIVE DEPTH
+// Use these tokens to create visual hierarchy without hardcoding shadow values.
+//========================================================================================
+
+// Small shadow.
+// Use for subtle elevation on compact controls and small cards.
+$shadow_sm              : var(--shadow_sm);
+
+// Medium shadow.
+// Use for dropdowns, cards, popovers, and moderately elevated surfaces.
+$shadow_md              : var(--shadow_md);
+
+// Large shadow.
+// Use for prominent modals, floating panels, and high_elevation components.
+$shadow_lg              : var(--shadow_lg);
+
+
+
+//========================================================================================
+// COLOR MAPS: CENTRALIZED COLOR COLLECTION
+// Collect all colors in one map so Sass loops can generate utility classes.
+//========================================================================================
+$colors: (
+  "primary"         : $color_primary,
+  "secondary"       : $color_secondary,
+
+  "gold"            : $color_gold,
+  "gold_soft"       : $color_gold_soft,
+  "gold_deep"       : $color_gold_deep,
+
+  "danger"          : $color_danger,
+  "danger_soft"     : $color_danger_soft,
+  "success"         : $color_success,
+  "success_soft"    : $color_success_soft,
+  "warning"         : $color_warning,
+  "warning_soft"    : $color_warning_soft,
+  "info"            : $color_info,
+  "info_soft"       : $color_info_soft,
+
+  "white"           : $color_white,
+  "black"           : $color_black,
+
+  "background"      : $bg_color,
+  "base"            : $base_color,
+  "hover"           : $color_hover,
+  "border"          : $color_border,
+
+  "ink"             : $color_ink,
+  "ink_2"           : $color_ink_2,
+  "ink_3"           : $color_ink_3,
+
+  "ivory"           : $color_ivory,
+  "ivory_2"         : $color_ivory_2,
+  "ivory_3"         : $color_ivory_3,
+
+  // Text colors
+  "text"            : $color_text,
+  "text_strong"     : $color_text_strong,
+  "muted"           : $color_muted,
+  "subtle"          : $color_subtle,
+
+  // Borders and dividers
+  "line"            : $color_line,
+  "line_strong"     : $color_line_strong,
+  "line_light"      : $color_line_light,
+  "line_light_strong": $color_line_light_strong,
+
+  "focus"           : $color_focus
+);
+
+$shadows: (
+  "sm": $shadow_sm,
+  "md": $shadow_md,
+  "lg": $shadow_lg
+);
+
+//========================================================================================
+// END OF COLOR TOKENS
+//========================================================================================
+
+
+
+
+
+.max_centent {
+  width: max-content ;
+}
+
+
+
+.free {
+  height: 200px ;
+}
+
+

@@ -1,0 +1,70 @@
+
+
+
+@mixin grid_utils {
+  .grid        { display: grid !important; }
+  .grid_inline { display: inline-grid !important; }
+
+  .grid_cols_1  { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
+  .grid_cols_2  { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .grid_cols_3  { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .grid_cols_4  { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; }
+  .grid_cols_5  { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; }
+  .grid_cols_6  { grid-template-columns: repeat(6, minmax(0, 1fr)) !important; }
+  .grid_cols_12 { grid-template-columns: repeat(12, minmax(0, 1fr)) !important; }
+  .grid_cols_auto { grid-template-columns: auto !important; }
+
+  .grid_rows_1  { grid-template-rows: repeat(1, minmax(0, 1fr)) !important; }
+  .grid_rows_2  { grid-template-rows: repeat(2, minmax(0, 1fr)) !important; }
+  .grid_rows_3  { grid-template-rows: repeat(3, minmax(0, 1fr)) !important; }
+  .grid_rows_4  { grid-template-rows: repeat(4, minmax(0, 1fr)) !important; }
+  .grid_rows_6  { grid-template-rows: repeat(6, minmax(0, 1fr)) !important; }
+  .grid_rows_auto { grid-template-rows: auto !important; }
+
+  .place_items_start   { place-items: start !important; }
+  .place_items_center  { place-items: center !important; }
+  .place_items_end     { place-items: end !important; }
+  .place_items_stretch { place-items: stretch !important; }
+
+  .place_content_start   { place-content: start !important; }
+  .place_content_center  { place-content: center !important; }
+  .place_content_end     { place-content: end !important; }
+  .place_content_between { place-content: space-between !important; }
+  .place_content_around  { place-content: space-around !important; }
+  .place_content_stretch { place-content: stretch !important; }
+
+  @for $i from 1 through 50 {
+    .gap_#{$i}   { gap:        #{$i}px !important; }
+    .gap_x_#{$i} { column-gap: #{$i}px !important; }
+    .gap_y_#{$i} { row-gap:    #{$i}px !important; }
+  }
+}
+
+@each $name, $value in $breakpoints {
+  @include media_up($value) {
+    @if $name == "" {
+      @include grid_utils;
+    } @else {
+      .#{$name}\:grid        { display: grid !important; }
+      .#{$name}\:grid_inline { display: inline-grid !important; }
+
+      // cols 1→12
+      @for $i from 1 through 12 {
+        .#{$name}\:grid_cols_#{$i} {
+          grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important;
+        }
+      }
+
+      // gap
+      @each $i in (1,2,3,4,5,6,8,10,12,16,20,24,32,40,50) {
+        .#{$name}\:gap_#{$i}   { gap:        #{$i}px !important; }
+        .#{$name}\:gap_x_#{$i} { column-gap: #{$i}px !important; }
+        .#{$name}\:gap_y_#{$i} { row-gap:    #{$i}px !important; }
+      }
+
+      .#{$name}\:place_items_center { place-items: center !important; }
+      .#{$name}\:place_items_start  { place-items: start !important; }
+      .#{$name}\:place_items_end    { place-items: end !important; }
+    }
+  }
+}

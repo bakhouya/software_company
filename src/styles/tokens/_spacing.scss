@@ -1,0 +1,29 @@
+
+
+
+
+//========================================================================================
+// TOKENS: SPACING
+// Fluid spacing scale (4px rhythm) + section_level spacing.
+//========================================================================================
+$space_0:                0;
+$space_1:                clamp(3px,  0.20vw + 2px,  4px);
+$space_2:                clamp(5px,  0.30vw + 4px,  8px);
+$space_3:                clamp(8px,  0.45vw + 6px,  12px);
+$space_4:                clamp(12px, 0.60vw + 9px,  16px);
+$space_5:                clamp(16px, 0.80vw + 12px, 20px);
+$space_6:                clamp(20px, 1.00vw + 15px, 24px);
+$space_7:                clamp(24px, 1.20vw + 18px, 32px);
+$space_8:                clamp(30px, 1.60vw + 22px, 40px);
+$space_9:                clamp(38px, 2.00vw + 28px, 52px);
+$space_10:               clamp(46px, 2.60vw + 32px, 64px);
+$space_11:               clamp(56px, 3.20vw + 40px, 80px);
+$space_12:               clamp(68px, 4.00vw + 48px, 100px);
+$space_13:               clamp(84px, 5.00vw + 60px, 128px);
+$space_14:               clamp(100px, 6.00vw + 72px, 160px);
+
+// Section_level spacing (big vertical rhythm)
+$space_section_sm:       clamp(48px, 4.00vw + 32px, 80px);
+$space_section_md:       clamp(64px, 5.50vw + 44px, 112px);
+$space_section_lg:       clamp(88px, 7.00vw + 60px, 160px);
+//========================================================================================

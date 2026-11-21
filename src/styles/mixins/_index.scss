@@ -1,0 +1,19 @@
+
+
+//========================================================================================
+// MIXINS: INDEX
+// Single entry point. Every component imports only: @inmport 'mixins/index' in 'main.scss';
+// Order matters: mixins that depend on others (e.g. _forms
+// uses _interactive's disabled-state, _layout uses _media's
+// media-md) must be forwarded AFTER their dependencies.
+//========================================================================================
+@import 'media';
+@import 'layout';
+@import 'typography';
+@import 'interactive';
+@import 'surfaces';
+@import 'helpers';
+@import 'animation';
+@import 'forms';
+@import 'a11y';
+//========================================================================================

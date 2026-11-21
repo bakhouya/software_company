@@ -1,0 +1,81 @@
+
+
+
+//========================================================================================
+// BASE: global element reset & defaults
+//========================================================================================
+*, *::before, *::after { box-sizing: border-box; padding: 0 ; margin: 0 ;}
+
+html { scroll-behavior: smooth; }
+@include reduced-motion { html { scroll-behavior: auto; } }
+
+body {
+  margin                : 0 ;
+  padding               : 0 ;
+  font-family           : $font_body ;
+  font-size             : $fs_base ;
+  line-height           : $lh_relaxed ;
+  color                 : $color_text ;
+  background            : $bg_gradient ;
+  -webkit-font-smoothing: antialiased ;
+  text-rendering        : optimizeLegibility ;
+
+  font-variation-settings: "wdth" 100;
+  font-optical-sizing: auto;
+  overflow-x: hidden ;
+ 
+}
+
+body.dark {@include dark_theme;}
+
+
+// -------------------------------------------------------------
+// 9e91971f829a46cbbf2b09643e01a369.UTsBoqHwn5L1hnT3OjtR4sy9
+// LANGUAGE-AWARE FONTS
+// The site is Arabic by default (html[lang="ar"]).
+// Any element with a non-Arabic lang attribute switches to
+// the Latin font stack. This covers mixed content: an English
+// term inside an Arabic paragraph, code, brand names, etc.
+// -------------------------------------------------------------
+
+// Default: Arabic
+[lang="ar"], [lang="ar"] * {font-family: $font_arabic ;}
+// Headings follow the same rule but use heading stacks
+[lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3, [lang="ar"] h4, [lang="ar"] h5, [lang="ar"] h6 {
+  font-family: $font_arabic_heading;
+}
+
+// Latin fallback for any non-Arabic language tag
+[lang="en"],
+[lang="en"] *,
+[lang="fr"],
+[lang="fr"] *,
+[lang="es"],
+[lang="es"] *,
+[lang="de"],
+[lang="de"] *,
+[lang="tr"],
+[lang="tr"] *,
+[lang="ja"],
+[lang="ja"] *,
+[lang="zh"],
+[lang="zh"] * {
+  font-family: $font_latin;
+}
+
+[lang="en"] h1, [lang="en"] h2, [lang="en"] h3,
+[lang="en"] h4, [lang="en"] h5, [lang="en"] h6,
+[lang="fr"] h1, [lang="fr"] h2, [lang="fr"] h3,
+[lang="fr"] h4, [lang="fr"] h5, [lang="fr"] h6 {
+  font-family: $font_latin_heading;
+}
+
+p { margin: 0 0 1em; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; object-fit: cover ;}
+button { font: inherit; cursor: pointer; border: 0 ; outline: 0 ; background-color: transparent;}
+ul, ol, li {list-style-type: none; padding: 0; margin: 0 ;}
+
+:focus-visible { @include focus-ring; }
+::selection { background: rgba($color_primary, 0.5) ; color: $color_ink; }
+//========================================================================================
