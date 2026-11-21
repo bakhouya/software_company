@@ -26,8 +26,7 @@
 }
 .container_public {
     padding-inline: 100px ;
-    // max-width: 1200px ;
-    // margin-inline: auto ;
+    @media (max-width: 768px) {padding-inline: 10px;}
 }
 
 .hover {
@@ -46,6 +45,7 @@
     background-color: $color_border ;
     margin-block: 2px ;
 }
+
 
 
 

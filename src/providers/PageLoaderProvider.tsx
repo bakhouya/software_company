@@ -3,7 +3,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import LOGO from "@/assets/images/Logo1.png"
+import LOGO from "@/assets/images/logos/Agoura.png"
 
 interface PageLoaderContextType {isLoading: boolean;}
 const PageLoaderContext = createContext<PageLoaderContextType>({isLoading: true});

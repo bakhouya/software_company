@@ -48,14 +48,12 @@
 
 
 
-// HIGHLIGHTS
 .about_highlights {
   display: flex;
   flex-direction: column;
   gap: 12px ;
   margin: 12px 0;
 }
-
 .about_highlight {
   display: flex;
   align-items: center;
@@ -70,7 +68,6 @@
   background-color: $base_color ;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03); 
 }
-
 .about_check {
   width: 25px;
   height: 25px;

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 
 import { ArrowUpDown } from "lucide-react";
-import LOGO from "@/assets/images/Logo1.png"
+import LOGO from "@/assets/images/logos/Agoura.png"
 import ThemeToggle from "@/components/ui/ThemeToggle";
 
 
@@ -40,8 +40,6 @@ export default function PublicHeader() {
     };
 
 
-
-
     return (
       <header className={`public_header ${isScrolled ? "scrolled" : ""}`}>
         <div className="container_public">
@@ -50,7 +48,6 @@ export default function PublicHeader() {
             <Link to="/" className="header_logo">
               <img src={LOGO} alt="logo"  loading="lazy" decoding="async"/>
             </Link>
-
 
             <nav className={`flex align_center justify_center ${menuOpen ? "active" : ""}`}>
                 {navLinks.map((link) => {

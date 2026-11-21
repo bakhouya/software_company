@@ -93,27 +93,10 @@
     height: 85svh;
 
     .hero_overlay {
-      background: linear-gradient(
-        90deg,
-        rgba(8, 13, 20, 0.9),
-        rgba(8, 13, 20, 0.65)
-      );
+      background: linear-gradient( 90deg, rgba(8, 13, 20, 0.9), rgba(8, 13, 20, 0.65));
     }
-
     .hero_content {
-      padding-block: 80px;
-    }
-
-    h1 {
-      letter-spacing: -1px;
-    }
-
-    p {
-      font-size: 15px;
-    }
-
-    .hero_bottom {
-      font-size: 10px;
+      padding-block: 30px;
     }
   }
 }
@@ -141,4 +124,13 @@
       transition: none;
     }
   }
+}
+
+
+
+@media (max-width: 768px) {
+    .about_layout {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
 }
