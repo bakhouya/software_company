@@ -117,12 +117,12 @@
   z-index: 999;
   bottom: $space_3 ;
   inset-inline: $space_3 ;
-  padding: 4px;
+  padding: 4px ;
   background: $base_color ;
   border: 1px solid $color_border ;
   @include radius_large() ;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+//   backdrop-filter: blur(24px);
+//   -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.12);
 
   &_inner {
@@ -149,9 +149,7 @@
     @include radius_large() ;
     cursor: pointer;
 
-    transition:
-      color 0.25s ease,
-      background 0.25s ease;
+    transition: color 0.25s ease, background 0.25s ease;
 
     &:hover {
       background: $color_hover ;
@@ -170,7 +168,6 @@
       }
     }
   }
-
   &_icon {
     position: relative;
     display: flex;
@@ -179,7 +176,6 @@
 
     transition: transform 0.25s ease;
   }
-
   &_indicator {
     position: absolute;
     top: -11px;
@@ -193,7 +189,6 @@
     background: $color_primary;
     box-shadow: 0 0 12px rgba(255, 124, 1, 0.5);
   }
-
   &_label {
     max-width: 100%;
     overflow: hidden;
@@ -208,23 +203,7 @@
   }
 }
 
-@media (max-width: 600px) {
-  .bottom_navigation {
 
-    &_inner {gap: 1px;}
-    &_item {
-      min-height: 57px;
-      padding: 8px 1px;
-    }
-    &_icon svg {
-      width: 19px;
-      height: 19px;
-    }
-    &_label {
-      font-size: 9px;
-    }
-  }
-}
 
 
 
