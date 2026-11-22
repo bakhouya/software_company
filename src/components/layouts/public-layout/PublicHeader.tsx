@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowUpDown } from "lucide-react";
 import LOGO from "@/assets/images/logos/Agoura.png"
 import ThemeToggle from "@/components/ui/ThemeToggle";
+import BottomNavigation from "./BottomNavigation";
 
 
 
@@ -39,8 +40,8 @@ export default function PublicHeader() {
       });
     };
 
-
     return (
+      <>
       <header className={`public_header ${isScrolled ? "scrolled" : ""}`}>
         <div className="container_public">
           <div className={`header_container ${isScrolled ? "header_container_scroll" : ""}`}>
@@ -86,6 +87,9 @@ export default function PublicHeader() {
           </div>
         </div>
       </header>
+
+      <BottomNavigation />
+      </>
     );
 
 }

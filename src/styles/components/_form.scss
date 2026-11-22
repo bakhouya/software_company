@@ -65,3 +65,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    .contact_fields_row {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 12px ;
+    }
+    .contact_form {
+        gap: 12px ;
+    }
+}

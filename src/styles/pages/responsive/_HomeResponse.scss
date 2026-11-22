@@ -11,13 +11,16 @@
         }
         .btn {display: none ;}
     }
+    .footer_public {
+        display: none ;
+    }
 
     .section_header {
         margin-bottom: $space_1 ;
         width: 100% ;
     }
     .title_headline {
-        font-size: 22px ; 
+        font-size: 25px ; 
         line-height: 35px !important;
     }
     .hero_section {
@@ -129,6 +132,7 @@
         }
         .contact_steps {
             margin: $space_3 0 !important;
+            .contact_step {padding: 12px ; }
         }
         .contact_direct {
             gap: 12px;
@@ -140,6 +144,16 @@
         .testimonials_grid {
             grid-template-columns: repeat(1, minmax(0, 1fr));
             gap: $space_3 ;
+            .testimonial_card_top {
+                gap: 12px;
+                margin-bottom: 12px;
+            }
+            .testimonial_divider {
+                width: 100%;
+                height: 1px;
+                margin: 12px 0 12px;
+                background: $color_border;
+            }
         }
     }
 
