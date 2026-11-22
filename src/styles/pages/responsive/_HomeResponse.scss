@@ -28,6 +28,11 @@
         font-size: 25px ; 
         line-height: 35px !important;
     }
+    .hero_section, .about_section, .projects_section, 
+    .business_sectors, .quality_section, .services_section, 
+    .contact_section, .testimonials_section, .faq_section {
+        overflow-x: hidden !important ;
+    }
     .hero_section {
         .hero_text {
             max-width: 100% ;
