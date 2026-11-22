@@ -122,7 +122,6 @@
     border: 1px solid $color_border ;
     @include radius_large() ;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.12);
-    display: none ;
     
     &_inner {
         display: grid;
