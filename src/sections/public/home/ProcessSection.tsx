@@ -7,49 +7,49 @@ import { HeaderSectionLight } from "@/components/ui/HeaderSection";
 const steps = [
   {
     number: "01",
-    title: "Écouter",
+    title: "Comprendre votre besoin",
     description:
       "Nous prenons le temps de comprendre votre contexte, vos enjeux et les opportunités avant d'imaginer une solution.",
     label: "Comprendre",
   },
   {
     number: "02",
-    title: "Définir",
+    title: "Définir votre projet",
     description:
       "Nous transformons votre vision en un périmètre précis, avec des objectifs clairs et des priorités mesurables.",
     label: "Structurer",
   },
   {
     number: "03",
-    title: "Concevoir",
+    title: "Concevoir la solution",
     description:
       "Nous imaginons l'expérience utilisateur, explorons les pistes créatives et validons la direction dès les premières étapes.",
     label: "Imaginer",
   },
   {
     number: "04",
-    title: "Développer",
+    title: "Développer votre solution",
     description:
       "Nous donnons vie à la solution progressivement, avec une architecture solide et des points de validation réguliers.",
     label: "Construire",
   },
   {
     number: "05",
-    title: "Tester",
+    title: "Tester et valider",
     description:
       "Nous vérifions chaque détail : qualité, performances, compatibilité et simplicité d'utilisation.",
     label: "Optimiser",
   },
   {
     number: "06",
-    title: "Lancer",
+    title: "Lancer votre projet",
     description:
       "Nous préparons la mise en ligne et vous accompagnons dans le passage du projet à son utilisation réelle.",
     label: "Déployer",
   },
   {
     number: "07",
-    title: "Évoluer",
+    title: "Améliorer en continu",
     description:
       "Nous analysons les retours, identifions les améliorations et faisons évoluer votre produit dans la durée.",
     label: "Améliorer",

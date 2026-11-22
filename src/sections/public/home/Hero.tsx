@@ -11,7 +11,7 @@ export default function HeroSection() {
   return (
     <>
 
-      <section className="hero_section" aria-labelledby="hero_title">
+      <section className="hero_section" aria-labelledby="hero_title" id="Home">
 
           <video src={HeroVideo} title={"Hero Video"} autoPlay muted loop playsInline preload="metadata" />
           <div className="hero_overlay" aria-hidden="true" />
@@ -50,16 +50,16 @@ export default function HeroSection() {
                   </div>
               </div>
 
-              <div className="flex align_center justify_center gap_16 hero_actions">
+              <div className="flex align_center justify_center gap_12 hero_actions">
 
                 <Link to="/contact" className="btn btn_pimary btn_lg btn_glow btn_radius">
-                  Let's Work Together
+                  Travaillons ensemble
                   <ArrowRight size={18} />
                 </Link>
 
                 <Link to="/projects" className="btn btn_lg btn_outline btn_glow btn_radius">
                   <Play size={17} />
-                  Explore Our Work
+                  Découvrir nos projets
                 </Link>
 
               </div>
@@ -68,13 +68,6 @@ export default function HeroSection() {
 
 
           </article>
-
-          {/* <div className="waves_hero">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
-              <path d="M0 60 L0 15.4 C360 15.4 360 27.7 720 27.7 C1080 27.7 1080 14.8 1440 14.8 L1440 60 Z"/>
-            </svg>
-          </div> */}
-  
 
       </section>
       

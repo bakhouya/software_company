@@ -22,7 +22,6 @@
         font-weight: $fw_semibold ;
         span {color: $color_danger ; }
     }
-
     input, select, textarea {
         width: 100%;
         min-width: 0;
@@ -72,5 +71,7 @@
     }
     .contact_form {
         gap: 12px ;
+        .form_field {gap: 7px ;}
+        .btn {width: 100% ;}
     }
 }

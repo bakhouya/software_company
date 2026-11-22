@@ -116,26 +116,20 @@
   position: fixed;
   z-index: 999;
   bottom: $space_3 ;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: min(850px, calc(100% - 40px));
-  padding: 6px;
-
+  inset-inline: $space_3 ;
+  padding: 4px;
   background: $base_color ;
   border: 1px solid $color_border ;
   @include radius_large() ;
-
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 2px 8px rgba(0, 0, 0, 0.12);
 
   &_inner {
     display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: center;
-    gap: 4px;
+    gap: 1px;
   }
 
   &_item {
@@ -148,7 +142,7 @@
 
     min-width: 0;
     min-height: 60px;
-    padding: 8px 3px;
+    padding: 8px 2px;
 
     background: transparent;
     border: 0;

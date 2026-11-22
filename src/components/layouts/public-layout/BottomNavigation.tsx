@@ -2,24 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  House,
-  Layers3,
-  UserRound,
-  BriefcaseBusiness,
-  Shapes,
-  Workflow,
-  ShieldCheck,
-} from "lucide-react";
+import {House, Layers3, BriefcaseBusiness, Shapes, Workflow} from "lucide-react";
 
 const navLinks = [
-  { label: "Accueil", path: "#Home", icon: House },
+  //   { label: "À propos", path: "#About", icon: UserRound },
+  //   { label: "Engagements", path: "#Quality", icon: ShieldCheck },
+  
   { label: "Services", path: "#Services", icon: Layers3 },
-  { label: "À propos", path: "#About", icon: UserRound },
   { label: "Projets", path: "#Projects", icon: BriefcaseBusiness },
+  { label: "Accueil", path: "#Home", icon: House },
   { label: "Secteurs", path: "#Sectors", icon: Shapes },
   { label: "Processus", path: "#Process", icon: Workflow },
-  { label: "Engagements", path: "#Quality", icon: ShieldCheck },
+
 ];
 
 const BottomNavigation = () => {
