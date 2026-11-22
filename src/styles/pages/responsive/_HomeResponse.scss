@@ -1,0 +1,146 @@
+
+@media (max-width: 768px) {
+    .public_header {
+        .header_logo {
+            img {
+                height: 38px ;
+            }
+        }
+        .nav_link  {
+            display: none ;
+        }
+        .btn {display: none ;}
+    }
+
+    .section_header {
+        margin-bottom: $space_1 ;
+        width: 100% ;
+    }
+    .title_headline {
+        font-size: 22px ; 
+        line-height: 35px !important;
+    }
+    .hero_section {
+        .hero_text {
+            max-width: 100% ;
+            margin: auto ;
+            .hero_title {
+                color: $color_white !important;
+                line-height: 35px ;
+                margin-bottom: 12px ;
+                font-size: 26px ;
+            }
+        }
+        .hero_actions {
+            margin-top: $space_3 !important;
+            align-items: stretch;
+            flex-direction: column;
+            gap: $space_3 ;
+        }
+        .state_hero {
+             margin-top: 5px !important;
+        }
+    }
+    .about_section {
+        padding: 15px 0 16px 0;
+        .about_layout {
+            grid-template-columns: 1fr ;
+            width: 100% ;
+            gap: $space_3 ;
+            .about_image_wrapper {
+                height: 370px;
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            .about_content {
+                text-align: center ;
+            }
+        }
+    }
+    .projects_section {
+        padding: 5px 0 16px 0;
+        .projects_masonry {
+            gap: $space_3 ;
+        }
+    }
+    .business_sectors {
+        padding: 15px 0 16px 0;
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: $space_3 ;
+            .sector_card {transform: perspective(1000px) rotateY(0deg);}
+        } 
+
+    }
+    .quality_section {
+        padding: 15px 0 16px 0;
+        .quality_container {
+            @include flex(column, start, flex-start, $space_3) ;
+            .quality_header {
+                width: 100% ;
+                position: relative !important;
+                top: 0 !important ;
+                text-align: center ;
+                .btn {
+                    width: 100% ;
+                    margin-block: $space_3 !important;
+                }
+            }
+            .quality_grid {
+                gap: $space_3 ;
+                .quality_card {transform: perspective(1000px) rotateY(0deg);}
+            }
+        }
+    }
+    .services_section {
+        padding: 15px 0 16px 0;
+        .services_grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: $space_3 ;
+            transform: none ;
+        }
+    }
+    .process_section {
+        padding: 15px 0 16px 0;
+        .process_content {
+            margin-inline-start: $space_3 ;
+        }
+    }
+    .faq_section {
+        padding: 3px 0 16px 0;
+        .faq_list {
+            gap: $space_3 ;
+            max-width: 100% ;
+            .faq_question, .faq_item.is_active .faq_answer  { padding: $space_3 ;}
+        }
+    }
+    .contact_section {
+        padding: 15px 0 16px 0;
+        .contact_layout {
+            grid-template-columns: 1fr ;
+            gap: $space_3 ;
+        }
+        .contact_information {
+            padding: 0 ;
+            .contact_intro {
+                @include flex(column, center, center, 8px ) ;
+                text-align: center ;
+            }
+        }
+        .contact_steps {
+            margin: $space_3 0 !important;
+        }
+        .contact_direct {
+            gap: 12px;
+            padding: 12px;
+        }
+    }
+    .testimonials_section {
+        padding: 15px 0;
+        .testimonials_grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: $space_3 ;
+        }
+    }
+
+}

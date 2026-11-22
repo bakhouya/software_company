@@ -52,10 +52,10 @@ export default function QualitySection() {
             <span className="radius_large bg_hover max_content py_5 px_13 border_hover">
                 <span className="text text_body fs_sm text_primary ">  Notre approche  </span>
             </span>
-            <div className="text text_body fs_3xl title fw_bold my_start_10">
+            <div className="text text_body fs_3xl title fw_bold my_start_10 title_headline">
               La technologie commence par l'humain <span className="text_primary"> et se traduit en valeur</span> 
             </div>
-            <div className="text text_body"> 
+            <div className="text text_body text_limit_4"> 
                 Nous ne commençons pas par les outils, mais par les
               bonnes questions. Nous comprenons ce que vous souhaitez
               transformer, puis choisissons la solution qui crée le

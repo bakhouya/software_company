@@ -54,22 +54,6 @@
     display: flex;
     align-items: flex-start;
     gap: 17px;
-
-    h3 {
-      max-width: 350px;
-      margin: 0 0 12px;
-      font-size: 24px;
-      line-height: 1.45;
-      font-weight: 650;
-    }
-
-    p {
-      max-width: 370px;
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.9;
-      opacity: 0.62;
-    }
   }
   .contact_intro_icon {
     flex-shrink: 0;
@@ -80,7 +64,7 @@
     color: $color_primary;
     background: rgba($color_primary, 0.11);
     border: 1px solid rgba($color_primary, 0.2);
-    border-radius: 13px;
+    @include radius_large() ;
   }
   .contact_steps {
     display: flex;
@@ -109,14 +93,13 @@
       letter-spacing: 1px;
   }
   .contact_direct {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 19px;
-    background: linear-gradient( 110deg, rgba($color_primary, 0.10), rgba($color_secondary, 0.07));
-    border: 1px solid rgba($color_primary, 0.16);
-    @include radius() ;
-    
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 19px;
+      background: linear-gradient( 110deg, rgba($color_primary, 0.10), rgba($color_secondary, 0.07));
+      border: 1px solid rgba($color_primary, 0.16);
+      @include radius() ;
   }
   .contact_direct_icon {
     width: 43px;
@@ -150,15 +133,6 @@
   }
 
 
-
-  // .contact_form_wrapper {
-  //   padding: $space_5 ;
-  //   background: $base_color ;
-  //   border: 1px solid $color_border ;
-  //   @include radius() ;
-  //   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.16);
-  //   backdrop-filter: blur(14px);
-  // }
   .contact_form_heading {
     display: flex;
     align-items: center;

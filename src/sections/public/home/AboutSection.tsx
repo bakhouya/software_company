@@ -47,7 +47,7 @@ export default function AboutSection() {
 
 
           <div className="about_content">
-            <div className="text text_body fs_3xl fw_bold lh_55">
+            <div className="text text_body fs_3xl fw_bold lh_55 title_headline">
               Nous créons des
               <span className="text_primary"> solutions digitales </span>
               qui font avancer vos idées.

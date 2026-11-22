@@ -120,25 +120,25 @@
     }
   }
 
-  @media (max-width: 650px) {
-    padding: 80px 0;
+  // @media (max-width: 650px) {
+  //   padding: 80px 0;
 
-    .testimonials_grid {
-      grid-template-columns: 1fr;
-      gap: 17px;
-      margin-top: 40px;
-    }
+  //   .testimonials_grid {
+  //     grid-template-columns: 1fr;
+  //     gap: 17px;
+  //     margin-top: 40px;
+  //   }
 
-    .testimonial_card,
-    .testimonial_card:last-child {
-      grid-column: auto;
-      min-height: 290px;
-      padding: 23px;
-    }
+  //   .testimonial_card,
+  //   .testimonial_card:last-child {
+  //     grid-column: auto;
+  //     min-height: 290px;
+  //     padding: 23px;
+  //   }
 
-    .testimonials_bottom {
-      flex-direction: column;
-      margin-top: 38px;
-    }
-  }
+  //   .testimonials_bottom {
+  //     flex-direction: column;
+  //     margin-top: 38px;
+  //   }
+  // }
 }

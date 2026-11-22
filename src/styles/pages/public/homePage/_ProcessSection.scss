@@ -77,7 +77,6 @@
         justify-content: flex-start;
     }
     }
-
     &.step_right {
         .process_content {
             grid-column: 3;
@@ -104,7 +103,6 @@
             justify-content: flex-end;
         }
     }
-
     &:hover {
         cursor: pointer;
         .process_content {
@@ -198,11 +196,9 @@
   .process_section {
     padding: 100px 0;
   }
-
   .process_header {
     margin-bottom: 75px;
   }
-
   .process_step {
     min-height: 230px;
     grid-template-columns: 1fr 75px 1fr;
@@ -266,7 +262,7 @@
     display: grid;
     grid-template-columns: 47px minmax(0, 1fr);
     min-height: auto;
-    padding: 25px 0 40px;
+    padding: 5px 0 5px;
 
     &.step_left,
     &.step_right {
