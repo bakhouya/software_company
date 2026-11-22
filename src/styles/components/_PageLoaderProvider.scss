@@ -3,19 +3,20 @@
 
 
 .global_loader {
-  position: fixed;
+  position: fixed ;
   inset: 0 ;
   height: 100vh ;
   width: 100% ;
-  z-index: 99999;
+  z-index: 99999 ;
   background: $base_color ;
   @include flex(row, center, center, 0) ;
 
   .loader_content {
+    position: relative ;
     display: flex;
-    flex-direction: column;
+    flex-direction: column ;
     align-items: center ;
-    gap: 25px;
+    gap: 25px ;
   }
   .loader_logo {
     color: $color_primary;
@@ -54,17 +55,12 @@
   }
 }
 .app_content {
-  min-height: 100vh;
+   min-height: 100vh;
 }
 .app_content_loading {
-  visibility: hidden;
+  visibility: hidden ;
 }
 @keyframes loader_progress {
-  0% {
-    transform: translateX(-110%);
-  }
-
-  100% {
-    transform: translateX(280%);
-  }
+  0% {transform: translateX(-110%);}
+  100% {transform: translateX(280%);}
 }

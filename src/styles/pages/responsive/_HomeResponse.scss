@@ -1,7 +1,9 @@
 
 @media (max-width: 768px) {
     body {
+        overflow-x: hidden !important;
         padding-bottom: 90px ;
+        font-family : "Clash Display", sans-serif !important;
     }
     .public_header {
         .header_logo {
