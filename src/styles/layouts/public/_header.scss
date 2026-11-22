@@ -210,44 +210,22 @@
 
 @media (max-width: 600px) {
   .bottom_navigation {
-    bottom: calc(10px + env(safe-area-inset-bottom));
-    width: calc(100% - 20px);
-    padding: 5px;
-    border-radius: 19px;
 
-    &_inner {
-      gap: 1px;
-    }
-
+    &_inner {gap: 1px;}
     &_item {
       min-height: 57px;
       padding: 8px 1px;
-      gap: 5px;
-      border-radius: 13px;
     }
-
     &_icon svg {
       width: 19px;
       height: 19px;
     }
-
     &_label {
       font-size: 9px;
     }
   }
 }
 
-@media (max-width: 350px) {
-  .bottom_navigation {
-    &_label {
-      font-size: 8px;
-    }
 
-    &_icon svg {
-      width: 17px;
-      height: 17px;
-    }
-  }
-}
 
 
