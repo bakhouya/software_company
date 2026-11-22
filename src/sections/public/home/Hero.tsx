@@ -34,20 +34,24 @@ export default function HeroSection() {
               </p>
 
               <div className="state_hero">
-                  <div className="">
-                      <div className="text text_body fs_xl fw_bold text_primary"> 254 </div>
-                      <div className="text text_body text_white"> Clients </div>
-                  </div>
-                  <div className="slash_hero"></div>
-                  <div className="">
-                      <div className="text text_body fs_xl fw_bold text_primary"> 254 </div>
-                      <div className="text text_body text_white"> Solutions </div>
-                  </div>
-                  <div className="slash_hero"></div>
-                  <div className="">
-                      <div className="text text_body fs_xl fw_bold text_primary"> 254 </div>
-                      <div className="text text_body text_white"> Solutions </div>
-                  </div>
+                <div>
+                  <div className="text text_body fs_xl fw_bold text_primary">20+</div>
+                  <div className="text text_body text_white text_limit_1">Solutions développées</div>
+                </div>
+
+                <div className="slash_hero"></div>
+
+                <div>
+                  <div className="text text_body fs_xl fw_bold text_primary">10+</div>
+                  <div className="text text_body text_white text_limit_1">Services proposés</div>
+                </div>
+
+                <div className="slash_hero"></div>
+
+                <div>
+                  <div className="text text_body fs_xl fw_bold text_primary">98%</div>
+                  <div className="text text_body text_white text_limit_1">Satisfaction client</div>
+                </div>
               </div>
 
               <div className="flex align_center justify_center gap_12 hero_actions">

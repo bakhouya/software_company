@@ -3,7 +3,6 @@
     body {
         overflow-x: hidden !important;
         padding-bottom: 90px ;
-        font-family : "Clash Display", sans-serif !important;
     }
     .public_header {
         .header_logo {
@@ -15,6 +14,9 @@
             display: none ;
         }
         .btn {display: none ;}
+    }
+    .bottom_navigation {
+        display: inline-block ;
     }
     .footer_public {
         display: none ;
@@ -30,8 +32,8 @@
     }
     .hero_section, .about_section, .projects_section, 
     .business_sectors, .quality_section, .services_section, 
-    .testimonials_section, .faq_section {
-        overflow-x: hidden !important ;
+    .contact_section, .testimonials_section, .faq_section {
+        overflow-x: clip !important;
     }
     .hero_section {
         .hero_text {
