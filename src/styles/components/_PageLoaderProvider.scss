@@ -4,16 +4,17 @@
 
 .global_loader {
   position: fixed;
-  inset: 0;
+  inset: 0 ;
   z-index: 99999;
   display: grid;
   place-items: center;
-  background: $base_color;
+  background: $base_color ;
+  @include flex(row, center, center, 0) ;
 
   .loader_content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center ;
     gap: 25px;
   }
 
