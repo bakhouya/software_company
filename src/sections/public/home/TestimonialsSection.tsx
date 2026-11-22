@@ -4,39 +4,39 @@ import HeaderSection from "@/components/ui/HeaderSection";
 
 
 const testimonials = [
-  {
-    id: 1,
-    name: "Client Name",
-    role: "Fondateur",
-    company: "Entreprise digitale",
-    initials: "CN",
-    rating: 5,
-    featured: false,
-    message:
-      "Une équipe professionnelle, à l'écoute et surtout capable de transformer nos idées en une solution concrète. Le résultat correspond parfaitement à nos attentes.",
-  },
-  {
-    id: 2,
-    name: "Client Name",
-    role: "Directeur général",
-    company: "Société commerciale",
-    initials: "CN",
-    rating: 5,
-    featured: true,
-    message:
-      "Nous avons particulièrement apprécié leur approche, leur disponibilité et la qualité du travail réalisé. Une collaboration fluide du début jusqu'à la livraison du projet.",
-  },
-  {
-    id: 3,
-    name: "Client Name",
-    role: "Responsable de projet",
-    company: "Startup",
-    initials: "CN",
-    rating: 5,
-    featured: false,
-    message:
-      "Une très bonne expérience avec une équipe réactive et organisée. Notre plateforme est plus performante et offre désormais une meilleure expérience à nos utilisateurs.",
-  },
+    {
+      id: 1,
+      name: "Yassine El Amrani",
+      role: "Fondateur",
+      company: "Entreprise digitale",
+      initials: "YE",
+      rating: 5,
+      featured: false,
+      message:
+        "Une équipe professionnelle, à l'écoute et surtout capable de transformer nos idées en une solution concrète. Le résultat correspond parfaitement à nos attentes.",
+    },
+    {
+      id: 2,
+      name: "Salma Benali",
+      role: "Directrice générale",
+      company: "Société commerciale",
+      initials: "SB",
+      rating: 5,
+      featured: true,
+      message:
+        "Nous avons particulièrement apprécié leur approche, leur disponibilité et la qualité du travail réalisé. Une collaboration fluide du début jusqu'à la livraison du projet.",
+    },
+    {
+      id: 3,
+      name: "Mehdi Alaoui",
+      role: "Responsable de projet",
+      company: "Startup",
+      initials: "MA",
+      rating: 5,
+      featured: false,
+      message:
+        "Une très bonne expérience avec une équipe réactive et organisée. Notre plateforme est plus performante et offre désormais une meilleure expérience à nos utilisateurs.",
+    },
 ];
 
 export default function TestimonialsSection() {

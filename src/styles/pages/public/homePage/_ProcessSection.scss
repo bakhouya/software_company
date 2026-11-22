@@ -22,7 +22,6 @@
 .process_timeline {
   position: relative;
 }
-
 .process_track {
     position: absolute;
     top: 0;
@@ -44,7 +43,6 @@
         box-shadow: 0 0 15px $color_primary;
     }
 }
-
 .process_step {
     position: relative;
     display: grid;
@@ -53,55 +51,55 @@
     &:last-child {margin-bottom: 0;}
 
     &.step_left {
+        position: relative;
         .process_content {
-        grid-column: 1;
-        grid-row: 1;
-        text-align: end;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            inset-inline-end: -40px ;
-            width: 40px;
-            height: 1px;
-            z-index: -1 ;
-            background: $color_border;
-        }
-    }
-
-    .process_visual {
-        grid-column: 3;
-        grid-row: 1;
-        padding-inline-start: $space_4;
-        justify-content: flex-start;
-    }
-    }
-    &.step_right {
-        .process_content {
-            grid-column: 3;
-            grid-row: 1;
-            text-align: start;
-            padding-inline-start: $space_4 ;
+            grid-column: 1;
+            grid-row: 1 ;
+            text-align: end ;
             &::before {
                 content: "";
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                inset-inline-start: -40px ;
-                width: 40px;
-                height: 1px;
+                position: absolute ;
+                top: 50% ;
+                transform: translateY(-50%) ;
+                inset-inline-end: -40px ;
+                width: 40px ;
+                height: 2px ;
                 z-index: -1 ;
-                background: $color_border;
+                background: $base_color ;
             }
         }
-
         .process_visual {
-            grid-column: 1;
+            grid-column: 3;
             grid-row: 1;
-            padding-inline-end: $space_4;
-            justify-content: flex-end;
+            padding-inline-start: $space_4;
+            justify-content: flex-start;
         }
+    }
+    &.step_right {
+      position: relative;
+      .process_content {
+          grid-column: 3;
+          grid-row: 1;
+          text-align: start;
+          padding-inline-start: $space_4 ;
+          &::before {
+              content: "";
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              inset-inline-start: -40px ;
+              width: 40px;
+              height: 1px;
+              z-index: -1 ;
+              background: $base_color ;
+          }
+      }
+      .process_visual {
+          grid-column: 1;
+          grid-row: 1;
+          padding-inline-end: $space_4;
+          justify-content: flex-end;
+      }
     }
     &:hover {
         cursor: pointer;
@@ -133,25 +131,25 @@
     padding: $space_4 ;
     @include radius() ;
     z-index: 2 ;
-    overflow: hidden ;
+    // overflow: hidden ;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 24px rgba(0, 0, 0, 0.05), 0 20px 45px rgba(0, 0, 0, 0.03); 
     .process_step_index {
         font-size: 9px;
         letter-spacing: 2px;
         opacity: 0.65;
     }
-    &::after {
-        content: "" ;
-        width: 200px ;
-        height: 200px ;
-        background-color: $color_hover ;
-        position: absolute ;
-        inset-inline-start: -100px ;
-        top: -100px ;
-        border-radius: 50% ;
-        border: 1px solid $color_hover ;
+    // &::after {
+    //     content: "" ;
+    //     width: 200px ;
+    //     height: 200px ;
+    //     background-color: $color_hover ;
+    //     position: absolute ;
+    //     inset-inline-start: -100px ;
+    //     top: -100px ;
+    //     border-radius: 50% ;
+    //     border: 1px solid $color_hover ;
 
-    }
+    // }
 }
 .process_marker {
     grid-column: 2;
@@ -327,7 +325,6 @@
     mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
   }
 }
-
 .tech_circle {
   position: absolute;
   width: 430px;
@@ -351,13 +348,11 @@
     inset: 80px;
   }
 }
-
 .tech_circle_two {
   width: 650px;
   height: 650px;
   border-color: rgba(255,255,255,.035);
 }
-
 .tech_line {
   position: absolute;
   height: 1px;
@@ -370,10 +365,8 @@
     transparent
   );
 }
-
 .tech_line_one { top: 25%; }
 .tech_line_two { top: 75%; }
-
 .tech_cross {
   position: absolute;
   color: rgba(250, 94, 4, .45);
