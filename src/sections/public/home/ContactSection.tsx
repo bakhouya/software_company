@@ -48,7 +48,7 @@ export default function ContactSection() {
 
       <div className="container_public">
         <div className="contact_layout">
-          <div className="contact_information">
+          <div className="contact_information" data-aos="fade-right">
             <div className="contact_intro">
               <span className="avatar avatar_lg bg_hover border_hover btn_radius">
                 <Sparkles size={19} className="text_primary"/>
@@ -91,7 +91,7 @@ export default function ContactSection() {
           </div>
 
           {/* Contact form */}
-          <div className="contact_form_wrapper">
+          <div className="contact_form_wrapper" data-aos="fade-left">
             <div className="contact_form_heading">
               <div>
                 <div className="text text_body fs_lg fw_semibold">Parlons de vos idées</div>

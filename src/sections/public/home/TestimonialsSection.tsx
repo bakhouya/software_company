@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
 
         <div className="testimonials_grid">
           {testimonials.map((item) => (
-            <article className={`testimonial_card ${ item.featured ? "testimonial_card_featured" : ""}`} key={item.id}>
+            <article className={`testimonial_card ${ item.featured ? "testimonial_card_featured" : ""}`} key={item.id} data-aos="fade-up">
               <div className="testimonial_card_top">
                 <span className="testimonial_quote_icon">
                   <Quote size={21} />

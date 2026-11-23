@@ -80,7 +80,7 @@ export default function BusinessSectors() {
             const Icon = sector.icon;
 
             return (
-              <article className="card sector_card" key={sector.id}>
+              <article className="card sector_card" key={sector.id} data-aos="fade-up">
 
                 <div className="flex justify_center my_end_7">
                     <div className="avatar avatar_xl radius_large mx_auto bg_hover border_hover">

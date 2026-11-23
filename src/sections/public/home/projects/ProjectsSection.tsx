@@ -103,7 +103,7 @@ export default function ProjectsSection() {
               className={`project_card project_card_${index + 1}`}
               key={project.id}
               aria-label={`Découvrir le projet ${project.title}`}
-            >
+              data-aos="fade-up">
               <div className="project_image">
                 <img src={project.image} alt={project.title} loading="lazy" decoding="async"/>
    

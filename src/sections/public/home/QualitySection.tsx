@@ -48,7 +48,7 @@ export default function QualitySection() {
 
       <div className="quality_container container_public">
 
-        <div className="quality_header">
+        <div className="quality_header" data-aos="fade-right">
             <span className="radius_large bg_hover max_content py_5 px_13 border_hover">
                 <span className="text text_body fs_sm text_primary ">  Notre approche  </span>
             </span>
@@ -68,7 +68,7 @@ export default function QualitySection() {
             </Link>
         </div>
 
-        <div className="quality_grid">
+        <div className="quality_grid" data-aos="fade-left">
             
           {principles.map((service) => {
             const Icon = service.icon;

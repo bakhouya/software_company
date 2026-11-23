@@ -62,7 +62,7 @@ export default function FAQSection() {
             const isOpen = activeIndex === index;
 
             return (
-              <div className={`faq_item ${isOpen ? "is_active" : ""}`} key={faq.question}>
+              <div className={`faq_item ${isOpen ? "is_active" : ""}`} key={faq.question} data-aos="zoom-in">
                 <button
                   className="faq_question"
                   onClick={() => toggleFAQ(index)}

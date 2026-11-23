@@ -11,6 +11,7 @@ const highlights = [
 export default function AboutSection() {
   return (
     <section className="about_section" id="About">
+
       <div className="about_bg_shapes" aria-hidden="true">
         <span className="about_bg_circle about_bg_circle_outer" />
         <span className="about_bg_circle about_bg_circle_inner" />
@@ -18,7 +19,7 @@ export default function AboutSection() {
       <div className="container_public">
 
         <div className="about_layout">
-          <div className="about_image_wrapper">
+          <div className="about_image_wrapper" data-aos="zoom-in">
             <svg className="about_svg_defs" aria-hidden="true">
               <defs>
                 <clipPath id="aboutOrganicShape" clipPathUnits="objectBoundingBox">
@@ -43,10 +44,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-
-
-
-          <div className="about_content">
+          <div className="about_content" data-aos="fade-up">
             <div className="text text_body fs_3xl fw_bold lh_55 title_headline">
               Nous créons des
               <span className="text_primary"> solutions digitales </span>
@@ -75,6 +73,7 @@ export default function AboutSection() {
         </div>
 
       </div>
+
     </section>
   );
 }

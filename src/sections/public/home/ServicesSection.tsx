@@ -81,7 +81,7 @@ export default function ServicesSection() {
             const Icon = service.icon;
 
             return (
-              <article className="card service_card" key={service.id}>
+              <article className="card service_card" key={service.id} data-aos="fade-up">
                 <div className="flex justify_center my_end_7">
                     <div className="avatar avatar_xl radius_large mx_auto bg_hover border_hover">
                         <Icon size={25} strokeWidth={1.7} className="text_primary"/>

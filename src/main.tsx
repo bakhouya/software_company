@@ -10,6 +10,7 @@ import App from "./App";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-creative";
+import "aos/dist/aos.css";
 
 import "./styles/main.scss";
 
