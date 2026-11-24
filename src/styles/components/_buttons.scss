@@ -92,17 +92,6 @@ $btn_glow_pulse_to   : 150px !default;
   .btn_#{$name} {
     --btn-color:    #{$color};
     --btn-contrast: #{map-get($btn_auto_contrast, $name)};
-    overflow: hidden ;
-    &:before {
-        content: "" ;
-        position: absolute ;
-        width: 5% ;
-        height: 40% ;
-        border-radius: 50% ;
-        background-color: darken($color , 5%) ;
-        inset-block-start: -20px ;
-        inset-inline-end: -20px ;
-    }
   }
 }
 
